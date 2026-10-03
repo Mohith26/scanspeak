@@ -1,0 +1,478 @@
+[
+  {
+    "model": "gemma3:4b",
+    "mode": "prompt",
+    "n": 72,
+    "outcome_acc": 0.6667,
+    "exact_acc": 0.4306,
+    "invalid_call_rate": 0.0972,
+    "median_latency_s": 1.597,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 0.65,
+      "longitudinal": 0.625,
+      "multi": 0.8667,
+      "paraphrase": 0.3333,
+      "refuse": 0.875
+    }
+  },
+  {
+    "model": "gemma3:4b",
+    "mode": "schema",
+    "n": 72,
+    "outcome_acc": 0.7361,
+    "exact_acc": 0.4583,
+    "invalid_call_rate": 0.0694,
+    "median_latency_s": 1.359,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 0.75,
+      "longitudinal": 0.625,
+      "multi": 0.8667,
+      "paraphrase": 0.4667,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "gemma3:4b",
+    "mode": "strict",
+    "n": 72,
+    "outcome_acc": 0.7778,
+    "exact_acc": 0.5,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 1.372,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 0.75,
+      "longitudinal": 0.625,
+      "multi": 0.9333,
+      "paraphrase": 0.6,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "gemma3:4b",
+    "mode": "strict_min",
+    "n": 72,
+    "outcome_acc": 0.7778,
+    "exact_acc": 0.5833,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 1.616,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 0.8,
+      "longitudinal": 0.625,
+      "multi": 0.9333,
+      "paraphrase": 0.6,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "llama3.1:8b",
+    "mode": "native",
+    "n": 72,
+    "outcome_acc": 0.8889,
+    "exact_acc": 0.875,
+    "invalid_call_rate": 0.0833,
+    "median_latency_s": 1.195,
+    "by_category": {
+      "arguments": 1.0,
+      "direct": 0.9,
+      "longitudinal": 0.875,
+      "multi": 0.8667,
+      "paraphrase": 0.8,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "llama3.1:8b",
+    "mode": "native_min",
+    "n": 72,
+    "outcome_acc": 0.875,
+    "exact_acc": 0.875,
+    "invalid_call_rate": 0.0833,
+    "median_latency_s": 1.032,
+    "by_category": {
+      "arguments": 1.0,
+      "direct": 0.9,
+      "longitudinal": 0.875,
+      "multi": 0.8667,
+      "paraphrase": 0.7333,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "llama3.1:8b",
+    "mode": "prompt",
+    "n": 72,
+    "outcome_acc": 0.8333,
+    "exact_acc": 0.7778,
+    "invalid_call_rate": 0.0278,
+    "median_latency_s": 1.584,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 1.0,
+      "longitudinal": 0.125,
+      "multi": 0.8667,
+      "paraphrase": 0.9333,
+      "refuse": 0.875
+    }
+  },
+  {
+    "model": "llama3.1:8b",
+    "mode": "schema",
+    "n": 72,
+    "outcome_acc": 0.8333,
+    "exact_acc": 0.7917,
+    "invalid_call_rate": 0.0278,
+    "median_latency_s": 1.41,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 1.0,
+      "longitudinal": 0.125,
+      "multi": 0.8,
+      "paraphrase": 0.9333,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "llama3.1:8b",
+    "mode": "strict",
+    "n": 72,
+    "outcome_acc": 0.8472,
+    "exact_acc": 0.7917,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 1.447,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 1.0,
+      "longitudinal": 0.125,
+      "multi": 0.8667,
+      "paraphrase": 0.9333,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "llama3.1:8b",
+    "mode": "strict_min",
+    "n": 72,
+    "outcome_acc": 0.875,
+    "exact_acc": 0.8056,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 1.398,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 1.0,
+      "longitudinal": 0.375,
+      "multi": 0.9333,
+      "paraphrase": 0.8667,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "llama3.2:3b",
+    "mode": "native",
+    "n": 72,
+    "outcome_acc": 0.7639,
+    "exact_acc": 0.7222,
+    "invalid_call_rate": 0.0833,
+    "median_latency_s": 0.512,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 1.0,
+      "longitudinal": 0.75,
+      "multi": 0.9333,
+      "paraphrase": 0.6,
+      "refuse": 0.25
+    }
+  },
+  {
+    "model": "llama3.2:3b",
+    "mode": "native_min",
+    "n": 72,
+    "outcome_acc": 0.7778,
+    "exact_acc": 0.7222,
+    "invalid_call_rate": 0.0694,
+    "median_latency_s": 0.592,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 1.0,
+      "longitudinal": 0.75,
+      "multi": 0.9333,
+      "paraphrase": 0.6,
+      "refuse": 0.375
+    }
+  },
+  {
+    "model": "llama3.2:3b",
+    "mode": "prompt",
+    "n": 72,
+    "outcome_acc": 0.625,
+    "exact_acc": 0.625,
+    "invalid_call_rate": 0.125,
+    "median_latency_s": 0.6,
+    "by_category": {
+      "arguments": 0.3333,
+      "direct": 0.9,
+      "longitudinal": 0.375,
+      "multi": 0.3333,
+      "paraphrase": 0.6667,
+      "refuse": 0.875
+    }
+  },
+  {
+    "model": "llama3.2:3b",
+    "mode": "schema",
+    "n": 72,
+    "outcome_acc": 0.625,
+    "exact_acc": 0.625,
+    "invalid_call_rate": 0.0833,
+    "median_latency_s": 0.591,
+    "by_category": {
+      "arguments": 0.5,
+      "direct": 0.95,
+      "longitudinal": 0.5,
+      "multi": 0.1333,
+      "paraphrase": 0.6667,
+      "refuse": 0.875
+    }
+  },
+  {
+    "model": "llama3.2:3b",
+    "mode": "strict",
+    "n": 72,
+    "outcome_acc": 0.6667,
+    "exact_acc": 0.6667,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 0.584,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 1.0,
+      "longitudinal": 0.5,
+      "multi": 0.2,
+      "paraphrase": 0.6667,
+      "refuse": 0.875
+    }
+  },
+  {
+    "model": "llama3.2:3b",
+    "mode": "strict_min",
+    "n": 72,
+    "outcome_acc": 0.6806,
+    "exact_acc": 0.6806,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 0.706,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 1.0,
+      "longitudinal": 0.625,
+      "multi": 0.2,
+      "paraphrase": 0.6667,
+      "refuse": 0.875
+    }
+  },
+  {
+    "model": "qwen2.5:1.5b",
+    "mode": "native",
+    "n": 72,
+    "outcome_acc": 0.75,
+    "exact_acc": 0.6667,
+    "invalid_call_rate": 0.0139,
+    "median_latency_s": 0.402,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 0.95,
+      "longitudinal": 0.5,
+      "multi": 0.7333,
+      "paraphrase": 0.5333,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "qwen2.5:1.5b",
+    "mode": "native_min",
+    "n": 72,
+    "outcome_acc": 0.7917,
+    "exact_acc": 0.7083,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 0.46,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 1.0,
+      "longitudinal": 0.625,
+      "multi": 0.7333,
+      "paraphrase": 0.6,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "qwen2.5:1.5b",
+    "mode": "prompt",
+    "n": 72,
+    "outcome_acc": 0.5556,
+    "exact_acc": 0.5417,
+    "invalid_call_rate": 0.0694,
+    "median_latency_s": 0.356,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 0.8,
+      "longitudinal": 0.125,
+      "multi": 0.2667,
+      "paraphrase": 0.5333,
+      "refuse": 0.875
+    }
+  },
+  {
+    "model": "qwen2.5:1.5b",
+    "mode": "schema",
+    "n": 72,
+    "outcome_acc": 0.5833,
+    "exact_acc": 0.5694,
+    "invalid_call_rate": 0.0417,
+    "median_latency_s": 0.354,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 0.85,
+      "longitudinal": 0.125,
+      "multi": 0.3333,
+      "paraphrase": 0.5333,
+      "refuse": 0.875
+    }
+  },
+  {
+    "model": "qwen2.5:1.5b",
+    "mode": "strict",
+    "n": 72,
+    "outcome_acc": 0.5972,
+    "exact_acc": 0.5694,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 0.358,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 0.85,
+      "longitudinal": 0.125,
+      "multi": 0.4,
+      "paraphrase": 0.5333,
+      "refuse": 0.875
+    }
+  },
+  {
+    "model": "qwen2.5:1.5b",
+    "mode": "strict_min",
+    "n": 72,
+    "outcome_acc": 0.5556,
+    "exact_acc": 0.5417,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 0.516,
+    "by_category": {
+      "arguments": 0.6667,
+      "direct": 0.75,
+      "longitudinal": 0.125,
+      "multi": 0.4,
+      "paraphrase": 0.4,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "qwen2.5:3b",
+    "mode": "native",
+    "n": 72,
+    "outcome_acc": 0.8333,
+    "exact_acc": 0.7083,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 0.52,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 1.0,
+      "longitudinal": 0.25,
+      "multi": 0.9333,
+      "paraphrase": 0.7333,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "qwen2.5:3b",
+    "mode": "native_min",
+    "n": 72,
+    "outcome_acc": 0.8194,
+    "exact_acc": 0.6806,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 0.734,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 1.0,
+      "longitudinal": 0.125,
+      "multi": 0.9333,
+      "paraphrase": 0.7333,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "qwen2.5:3b",
+    "mode": "prompt",
+    "n": 72,
+    "outcome_acc": 0.6806,
+    "exact_acc": 0.5556,
+    "invalid_call_rate": 0.0278,
+    "median_latency_s": 0.581,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 0.85,
+      "longitudinal": 0.125,
+      "multi": 0.6667,
+      "paraphrase": 0.5333,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "qwen2.5:3b",
+    "mode": "schema",
+    "n": 72,
+    "outcome_acc": 0.6528,
+    "exact_acc": 0.5556,
+    "invalid_call_rate": 0.0417,
+    "median_latency_s": 0.613,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 0.75,
+      "longitudinal": 0.125,
+      "multi": 0.6667,
+      "paraphrase": 0.5333,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "qwen2.5:3b",
+    "mode": "strict",
+    "n": 72,
+    "outcome_acc": 0.6944,
+    "exact_acc": 0.5972,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 0.564,
+    "by_category": {
+      "arguments": 0.8333,
+      "direct": 0.85,
+      "longitudinal": 0.125,
+      "multi": 0.7333,
+      "paraphrase": 0.5333,
+      "refuse": 1.0
+    }
+  },
+  {
+    "model": "qwen2.5:3b",
+    "mode": "strict_min",
+    "n": 72,
+    "outcome_acc": 0.6944,
+    "exact_acc": 0.6111,
+    "invalid_call_rate": 0.0,
+    "median_latency_s": 0.745,
+    "by_category": {
+      "arguments": 1.0,
+      "direct": 0.9,
+      "longitudinal": 0.125,
+      "multi": 0.6,
+      "paraphrase": 0.5333,
+      "refuse": 1.0
+    }
+  }
+]

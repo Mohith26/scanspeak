@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ScanSpeak · talk to a micro-CT scan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #0b0d12; --panel: #12151c; --panel2: #171b24; --line: #232836;
+    --text: #e6e9ef; --muted: #8b93a7; --accent: #4fd1c5; --accent2: #f6ad55;
+    --bad: #fc8181; --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; }
+  .app { display: grid; grid-template-columns: 1fr 420px; grid-template-rows: 52px 1fr; height: 100vh; }
+  header { grid-column: 1 / 3; display: flex; align-items: center; gap: 14px; padding: 0 18px;
+    border-bottom: 1px solid var(--line); background: var(--panel); }
+  .logo { font-weight: 650; letter-spacing: .2px; }
+  .logo span { color: var(--accent); }
+  .tag { color: var(--muted); font-size: 12.5px; }
+  .pill { margin-left: auto; display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 12px; }
+  select { background: var(--panel2); color: var(--text); border: 1px solid var(--line); border-radius: 6px;
+    padding: 4px 8px; font-size: 12px; }
+  .viewer { position: relative; background: #000; }
+  canvas#gl { width: 100%; height: 100%; display: block; }
+  .hud { position: absolute; left: 12px; bottom: 12px; font: 12px var(--mono); color: var(--muted);
+    background: rgba(11,13,18,.75); border: 1px solid var(--line); padding: 6px 9px; border-radius: 6px; }
+  .empty { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); text-align: center; }
+  .empty b { color: var(--text); display: block; font-size: 16px; margin-bottom: 4px; }
+  aside { display: flex; flex-direction: column; border-left: 1px solid var(--line); background: var(--panel); min-height: 0; }
+  .log { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+  .msg.user { align-self: flex-end; background: #1f2633; border: 1px solid #2c3546; padding: 8px 11px;
+    border-radius: 10px 10px 2px 10px; max-width: 85%; }
+  .turn { display: flex; flex-direction: column; gap: 6px; }
+  .calls { display: flex; flex-wrap: wrap; gap: 5px; }
+  .call { font: 11.5px var(--mono); background: #0f1a1c; color: var(--accent); border: 1px solid #1f3b3b;
+    padding: 2px 7px; border-radius: 5px; }
+  .call.err { color: var(--bad); border-color: #4a2626; background: #1c1010; }
+  .reply { color: var(--text); }
+  .reply .num { color: var(--accent2); font-weight: 600; }
+  .meta { color: var(--muted); font: 11px var(--mono); }
+  .measure { border-top: 1px solid var(--line); padding: 10px 14px; max-height: 150px; overflow-y: auto; }
+  .measure h4 { margin: 0 0 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .8px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font: 12px var(--mono); }
+  td { padding: 2px 4px; border-bottom: 1px solid #1a1f2a; } td:last-child { text-align: right; color: var(--accent2); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 14px 10px; }
+  .chip { cursor: pointer; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 14px;
+    padding: 3px 10px; background: transparent; }
+  .chip:hover { color: var(--text); border-color: #3a4256; }
+  form { display: flex; gap: 8px; padding: 12px 14px; border-top: 1px solid var(--line); }
+  input[type=text] { flex: 1; background: var(--panel2); border: 1px solid var(--line); color: var(--text);
+    border-radius: 8px; padding: 10px 12px; font-size: 14px; outline: none; }
+  input[type=text]:focus { border-color: #2f6f6a; }
+  button.send { background: var(--accent); color: #062523; border: 0; border-radius: 8px; padding: 0 14px; font-weight: 600; cursor: pointer; }
+  button.send:disabled { opacity: .5; }
+  .thinking { color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="logo">Scan<span>Speak</span></div>
+    <div class="tag">Plain English → tool calls → micro-CT viewer. A local model picks the actions; every number comes from the tools.</div>
+    <div class="pill">
+      <select id="model"></select>
+      <select id="mode">
+        <option value="native+repair">native + repair</option>
+        <option value="strict">strict schema</option>
+        <option value="schema">loose schema</option>
+        <option value="native">native tools</option>
+        <option value="prompt">prompt only</option>
+      </select>
+    </div>
+  </header>
+  <div class="viewer">
+    <canvas id="gl"></canvas>
+    <div class="empty" id="empty"><div><b>No scan open</b>Try "open M37 at day 0 and find the tumor"</div></div>
+    <div class="hud" id="hud">ready</div>
+  </div>
+  <aside>
+    <div class="log" id="log"></div>
+    <div class="chips" id="chips"></div>
+    <div class="measure"><h4>Measurements</h4><table id="mt"></table></div>
+    <form id="f"><input type="text" id="q" placeholder="Ask about the scan…" autocomplete="off"><button class="send" id="send">Run</button></form>
+  </aside>
+</div>
+<script type="module">
+import { Niivue, SHOW_RENDER } from "https://cdn.jsdelivr.net/npm/@niivue/niivue@0.69.0/+esm";
+
+const nv = new Niivue({ backColor: [0, 0, 0, 1], show3Dcrosshair: false, crosshairColor: [0.31, 0.82, 0.77, 0.9],
+  multiplanarShowRender: SHOW_RENDER.ALWAYS, isColorbar: false, dragAndDropEnabled: false, loadingText: "" });
+await nv.attachTo("gl");
+nv.setSliceType(nv.sliceTypeMultiplanar);
+window.nv = nv;
+
+const overlays = {};           // structure -> NVImage
+let window_ = { min: -200, max: 300 };
+const $ = (id) => document.getElementById(id);
+const hud = (t) => { $("hud").textContent = t; };
+
+const LAYOUTS = { axial: () => nv.sliceTypeAxial, coronal: () => nv.sliceTypeCoronal, sagittal: () => nv.sliceTypeSagittal,
+  three_d: () => nv.sliceTypeRender, four_up: () => nv.sliceTypeMultiplanar };
+
+async function applyOp(op) {
+  if (op.op === "load") {
+    for (const k of Object.keys(overlays)) delete overlays[k];
+    window_ = { min: op.min, max: op.max };
+    await nv.loadVolumes([{ url: op.url, colormap: "gray", cal_min: op.min, cal_max: op.max }]);
+    $("empty").style.display = "none";
+  } else if (op.op === "window") {
+    window_ = { min: op.min, max: op.max };
+    if (nv.volumes[0]) { nv.volumes[0].cal_min = op.min; nv.volumes[0].cal_max = op.max; nv.updateGLVolume(); }
+  } else if (op.op === "overlay") {
+    if (overlays[op.structure]) nv.removeVolume(overlays[op.structure]);
+    const img = await nv.addVolumeFromUrl({ url: op.url, colormap: op.color, opacity: op.opacity, cal_min: 0.5, cal_max: 1 });
+    overlays[op.structure] = img;
+  } else if (op.op === "opacity") {
+    const img = overlays[op.structure];
+    if (img) nv.setOpacity(nv.volumes.indexOf(img), op.opacity);
+  } else if (op.op === "layout") {
+    nv.setSliceType(LAYOUTS[op.layout]());
+  } else if (op.op === "focus") {
+    nv.scene.crosshairPos = op.frac;
+    nv.updateGLVolume();
+  } else if (op.op === "reset") {
+    nv.setSliceType(nv.sliceTypeMultiplanar);
+    if (nv.volumes[0]) { nv.volumes[0].cal_min = op.min; nv.volumes[0].cal_max = op.max; }
+    nv.scene.crosshairPos = [0.5, 0.5, 0.5];
+    nv.setRenderAzimuthElevation(110, 15);
+    nv.updateGLVolume();
+  } else if (op.op === "download") {
+    const a = document.createElement("a"); a.href = op.url; a.download = op.url.split("/").pop(); a.click();
+  }
+}
+
+function esc(s) { return String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])); }
+function highlight(s) { return esc(s).replace(/([+-]?[\d,]+\.?\d*\s?(mm³|mm|HU|%))/g, '<span class="num">$1</span>'); }
+function fmtCall(c) {
+  const args = Object.entries(c.arguments || {}).map(([k, v]) => `${k}=${JSON.stringify(v)}`).join(", ");
+  return `${c.name}(${args})`;
+}
+
+function addUser(t) { const d = document.createElement("div"); d.className = "msg user"; d.textContent = t; $("log").appendChild(d); }
+function addTurn() { const d = document.createElement("div"); d.className = "turn"; d.innerHTML = '<div class="thinking">planning…</div>'; $("log").appendChild(d); $("log").scrollTop = 1e9; return d; }
+
+function renderMeasurements(ms) {
+  $("mt").innerHTML = ms.slice().reverse().map((m) =>
+    `<tr><td>${m.mouse} ${m.timepoint}</td><td>${m.structure} ${m.metric.replace("_", " ")}</td><td>${m.value.toLocaleString()} ${m.unit}</td></tr>`).join("");
+}
+
+async function send(text) {
+  if (!text.trim()) return;
+  addUser(text);
+  const turn = addTurn();
+  $("send").disabled = true;
+  hud("planning with " + $("model").value + " …");
+  try {
+    const r = await (await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text, model: $("model").value, mode: $("mode").value }) })).json();
+    const okFlags = r.results.map((x) => x.ok);
+    const calls = r.calls.map((c, i) => `<span class="call ${okFlags[i] === false || r.problems.length ? "err" : ""}">${esc(fmtCall(c))}</span>`).join("");
+    turn.innerHTML = (calls ? `<div class="calls">${calls}</div>` : "") +
+      `<div class="reply">${highlight(r.reply)}</div>` +
+      `<div class="meta">${r.calls.length} call${r.calls.length === 1 ? "" : "s"} · LLM ${r.llm_s}s · tools ${r.exec_s}s</div>`;
+    for (const op of r.ops) await applyOp(op);
+    renderMeasurements(r.measurements);
+    hud(r.state.split(";").slice(0, 1).join("") + " · " + $("mode").value);
+  } catch (e) {
+    turn.innerHTML = `<div class="reply" style="color:var(--bad)">${esc(e)}</div>`;
+  }
+  $("send").disabled = false;
+  $("log").scrollTop = 1e9;
+}
+
+$("f").addEventListener("submit", (e) => { e.preventDefault(); const t = $("q").value; $("q").value = ""; send(t); });
+const CHIPS = ["open M37 at day 0 and find the tumor", "how much did the tumor grow from day 0 to day 8?",
+  "show it in 3D", "make the skeleton pop out", "how wide is the tumor at its widest?", "is this mouse going to survive?",
+  "export the measurements as csv"];
+$("chips").innerHTML = CHIPS.map((c) => `<button class="chip">${c}</button>`).join("");
+$("chips").addEventListener("click", (e) => { if (e.target.classList.contains("chip")) send(e.target.textContent); });
+
+await fetch("/api/reset", { method: "POST" });
+const info = await (await fetch("/api/info")).json();
+const models = info.models.filter((m) => !m.includes("embed"));
+$("model").innerHTML = models.map((m) => `<option ${m === info.model ? "selected" : ""}>${m}</option>`).join("");
+$("mode").value = info.mode;
+hud(info.tumor_model ? "tumor model loaded" : "no tumor model configured");
+</script>
+</body>
+</html>

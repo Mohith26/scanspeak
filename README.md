@@ -48,14 +48,14 @@ Smallest model that's actually usable: **qwen2.5:1.5b with native tool calling h
     - loads both NIfTI scans, runs the 3D U-Net tumor segmenter
     - computes volumes from voxel counts x real voxel size
         │
-        ├──► reply text built from tool outputs: "345.2 mm³ at day0 → 755.1 mm³ at day8 (+119%)"
+        ├──► reply text built from tool outputs: "484.2 mm³ at day0 → 927.2 mm³ at day8 (+91%)"
         └──► view ops ─► NiiVue in the browser   (web/index.html)
                      └─► or 3D Slicer's scene   (slicer/ScanSpeak/ScanSpeak.py)
 ```
 
-The tool set: `load_scan, set_window, segment, measure, compare_timepoints, set_layout, focus_on, set_visibility, set_opacity, export_measurements, reset_view`. Body, bone and lungs use intensity rules. Tumor segmentation uses a 3D U-Net from my companion project [Fauxgraft](https://github.com/Mohith26/fauxgraft), trained on just 16 hand-labeled scans plus synthetic tumors. Its Dice on held-out mice is 0.62, against 0.90 for human vs human.
+The tool set: `load_scan, set_window, segment, measure, compare_timepoints, set_layout, focus_on, set_visibility, set_opacity, export_measurements, reset_view`. Body, bone and lungs use intensity rules. Tumor segmentation uses the reference 3D U-Net from my companion project [Fauxgraft](https://github.com/Mohith26/fauxgraft), trained on the 325 labeled training scans. On held-out mice it gets Dice 0.72 (human vs human is 0.90) and a median tumor-volume error of 14%.
 
-That number shows in the demo. For mouse M37 the model reports 345 → 755 mm³ (+119%) from day 0 to day 8, while the expert consensus says 382 → 925 mm³ (+142%). The 3D view also shows false positives on the paws. The agent layer is the point of this repo, not the segmenter: a better tumor model drops in through `SCANSPEAK_TUMOR_MODEL` with no other changes.
+The demo shows its limits honestly. For mouse M37 it reports 484 → 927 mm³ (+91%) from day 0 to day 8. The expert consensus says 382 → 925 mm³ (+142%): day 8 is almost exactly right, but day 0 is inflated by a few false-positive blobs (on the chest, a knee and near the tail), which you can see in the 3D view. M37 has only one tumor. The agent layer is the point of this repo, not the segmenter: a better tumor model drops in through `SCANSPEAK_TUMOR_MODEL` with no other changes.
 
 ## Run it
 

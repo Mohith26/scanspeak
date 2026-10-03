@@ -2,6 +2,8 @@
 
 **Type plain English at a mouse micro-CT scan, and a small language model running on your laptop drives the viewer.** "Open M37 at day 0, find the tumor, how much did it grow by day 8?" turns into tool calls that load the scan, run an AI tumor segmenter, and report the growth. The language model only picks actions. Every number comes from the tools, so it can't make up a tumor volume.
 
+**Interactive write-up: [mohithgajjela.com/system-07-scanspeak](https://mohithgajjela.com/system-07-scanspeak)**. Replay a recorded session step by step, and browse every benchmark output by model and decoding mode.
+
 ![ScanSpeak demo](docs/demo.gif)
 
 It runs as a browser app (NiiVue viewer) and as a 3D Slicer module. Both share one agent, one tool schema and one measurement backend. The scans are real preclinical micro-CT from the public TumSeg database, using mice the tumor model never trained on.

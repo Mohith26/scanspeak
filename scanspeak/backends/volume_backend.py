@@ -20,9 +20,10 @@ from scipy import ndimage
 from scipy.spatial import ConvexHull
 
 TUMSEG = os.environ.get(
-    "TUMSEG_DIR", "/Users/mohithgajjela/resume-projects/_data/tumseg/TumSeg database")
+    "TUMSEG_DIR", os.path.join(os.path.dirname(__file__), "..", "..", "data", "TumSeg database"))
 CACHE = os.environ.get("SCANSPEAK_CACHE", os.path.join(os.path.dirname(__file__), "..", "..", "cache"))
-TUMOR_MODEL = os.environ.get("SCANSPEAK_TUMOR_MODEL", "")
+TUMOR_MODEL = os.environ.get("SCANSPEAK_TUMOR_MODEL",
+                             os.path.join(os.path.dirname(__file__), "..", "..", "models", "tumor_unet.pt"))
 
 # Demo catalog: held-out test mice with several timepoints each.
 CATALOG = {"M37": (8, "M37"), "M33": (8, "M33"), "M07": (8, "M07"), "M15": (6, "M15")}

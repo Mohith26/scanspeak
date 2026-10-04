@@ -1,0 +1,4049 @@
+{
+ "source": "TumSeg (Jensen et al., Sci Data 2024, CC-BY)",
+ "animals": [
+  {
+   "id": "D1-M01",
+   "dataset": 1,
+   "mouse": "M01",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M01_M02_0h/M01_0h/CT_M01_0h.nii.gz",
+     "expert_tumor_mm3": 333.9
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M01_M02_3h/M01_3h/CT_M01_3h.nii.gz",
+     "expert_tumor_mm3": 318.0
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M01_M02_22.5h/M01_22.5h/CT_M01_22.nii.gz",
+     "expert_tumor_mm3": 335.0
+    }
+   ]
+  },
+  {
+   "id": "D1-M02",
+   "dataset": 1,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M01_M02_0h/M02_0h/CT_M02_0h.nii.gz",
+     "expert_tumor_mm3": 418.8
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M01_M02_3h/M02_3h/CT_M02_3h.nii.gz",
+     "expert_tumor_mm3": 451.1
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M01_M02_22.5h/M02_22.5h/CT_M02_22.nii.gz",
+     "expert_tumor_mm3": 518.5
+    }
+   ]
+  },
+  {
+   "id": "D1-M03",
+   "dataset": 1,
+   "mouse": "M03",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M03_M04_0h/M03_0h/CT_M03_0h.nii.gz",
+     "expert_tumor_mm3": 943.4
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M03_M04_3h/M03_3h/CT_M03_3h.nii.gz",
+     "expert_tumor_mm3": 883.2
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M03_M04_22.5h/M03_22.5h/CT_M03_22.nii.gz",
+     "expert_tumor_mm3": 878.1
+    }
+   ]
+  },
+  {
+   "id": "D1-M04",
+   "dataset": 1,
+   "mouse": "M04",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M03_M04_0h/M04_0h/CT_M04_0h.nii.gz",
+     "expert_tumor_mm3": 787.3
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M03_M04_3h/M04_3h/CT_M04_3h.nii.gz",
+     "expert_tumor_mm3": 754.0
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M03_M04_22.5h/M04_22.5h/CT_M04_22.nii.gz",
+     "expert_tumor_mm3": 713.5
+    }
+   ]
+  },
+  {
+   "id": "D1-M05",
+   "dataset": 1,
+   "mouse": "M05",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M05_M06_0h/M05_0h/CT_M05_0h.nii.gz",
+     "expert_tumor_mm3": 403.3
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M05_M06_3h/M05_3h/CT_M05_3h.nii.gz",
+     "expert_tumor_mm3": 375.2
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M05_M06_22.5h/M05_22.5h/CT_M05_22.nii.gz",
+     "expert_tumor_mm3": 423.4
+    }
+   ]
+  },
+  {
+   "id": "D1-M06",
+   "dataset": 1,
+   "mouse": "M06",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M05_M06_0h/M06_0h/CT_M06_0h.nii.gz",
+     "expert_tumor_mm3": 752.7
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M05_M06_3h/M06_3h/CT_M06_3h.nii.gz",
+     "expert_tumor_mm3": 659.2
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M05_M06_22.5h/M06_22.5h/CT_M06_22.nii.gz",
+     "expert_tumor_mm3": 698.8
+    }
+   ]
+  },
+  {
+   "id": "D1-M07",
+   "dataset": 1,
+   "mouse": "M07",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M07_M08_0h/M07_0h/CT_M07_0h.nii.gz",
+     "expert_tumor_mm3": 744.3
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M07_M08_3h/M07_3h/CT_M07_3h.nii.gz",
+     "expert_tumor_mm3": 699.5
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M07_M08_22.5h/M07_22.5h/CT_M07_22.nii.gz",
+     "expert_tumor_mm3": 754.7
+    }
+   ]
+  },
+  {
+   "id": "D1-M08",
+   "dataset": 1,
+   "mouse": "M08",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M07_M08_0h/M08_0h/CT_M08_0h.nii.gz",
+     "expert_tumor_mm3": 906.3
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M07_M08_3h/M08_3h/CT_M08_3h.nii.gz",
+     "expert_tumor_mm3": 979.5
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M07_M08_22.5h/M08_22.5h/CT_M08_22.nii.gz",
+     "expert_tumor_mm3": 1131.6
+    }
+   ]
+  },
+  {
+   "id": "D1-M09",
+   "dataset": 1,
+   "mouse": "M09",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M09_M10_0h/M09_0h/CT_M09_0h.nii.gz",
+     "expert_tumor_mm3": 438.5
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M09_M10_3h/M09_3h/CT_M09_3h.nii.gz",
+     "expert_tumor_mm3": 481.6
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M09_M10_22.5h/M09_22.5h/CT_M09_22.nii.gz",
+     "expert_tumor_mm3": 525.6
+    }
+   ]
+  },
+  {
+   "id": "D1-M10",
+   "dataset": 1,
+   "mouse": "M10",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M09_M10_0h/M10_0h/CT_M10_0h.nii.gz",
+     "expert_tumor_mm3": 451.8
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M09_M10_3h/M10_3h/CT_M10_3h.nii.gz",
+     "expert_tumor_mm3": 442.2
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M09_M10_22.5h/M10_22.5h/CT_M10_22.nii.gz",
+     "expert_tumor_mm3": 505.5
+    }
+   ]
+  },
+  {
+   "id": "D1-M11",
+   "dataset": 1,
+   "mouse": "M11",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M11_M12_0h/M11_0h/CT_M11_0h.nii.gz",
+     "expert_tumor_mm3": 709.9
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M11_M12_3h/M11_3h/CT_M11_3h.nii.gz",
+     "expert_tumor_mm3": 739.6
+    }
+   ]
+  },
+  {
+   "id": "D1-M12",
+   "dataset": 1,
+   "mouse": "M12",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M11_M12_0h/M12_0h/CT_M12_0h.nii.gz",
+     "expert_tumor_mm3": 646.3
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M11_M12_3h/M12_3h/CT_M12_3h.nii.gz",
+     "expert_tumor_mm3": 686.4
+    }
+   ]
+  },
+  {
+   "id": "D1-M13",
+   "dataset": 1,
+   "mouse": "M13",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M13_M14_0h/M13_0h/CT_M13_0h.nii.gz",
+     "expert_tumor_mm3": 874.5
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M13_M14_3h/M13_3h/CT_M13_3h.nii.gz",
+     "expert_tumor_mm3": 984.2
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M13_M14_22.5h/M13_22.5h/CT_M13_22.nii.gz",
+     "expert_tumor_mm3": 1208.0
+    }
+   ]
+  },
+  {
+   "id": "D1-M14",
+   "dataset": 1,
+   "mouse": "M14",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M13_M14_0h/M14_0h/CT_M14_0h.nii.gz",
+     "expert_tumor_mm3": 739.1
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M13_M14_3h/M14_3h/CT_M14_3h.nii.gz",
+     "expert_tumor_mm3": 756.1
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M13_M14_22.5h/M14_22.5h/CT_M14_22.nii.gz",
+     "expert_tumor_mm3": 929.9
+    }
+   ]
+  },
+  {
+   "id": "D1-M15",
+   "dataset": 1,
+   "mouse": "M15",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 1/M15_0h/M15_0h/CT_M15_0h.nii.gz",
+     "expert_tumor_mm3": 373.3
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 1/M15_3h/M15_3h/CT_M15_3h.nii.gz",
+     "expert_tumor_mm3": 306.5
+    },
+    {
+     "tp": "22.5h",
+     "ct": "Dataset 1/M15_22.5h/M15_22.5h/CT_M15_22.nii.gz",
+     "expert_tumor_mm3": 378.2
+    }
+   ]
+  },
+  {
+   "id": "D2-M01",
+   "dataset": 2,
+   "mouse": "M01",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M01_M02_0d/M01_0d/CT_M01_0d.nii.gz",
+     "expert_tumor_mm3": 145.6
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M01_M02_8d/M01_8d/CT_M01_8d.nii.gz",
+     "expert_tumor_mm3": 281.4
+    }
+   ]
+  },
+  {
+   "id": "D2-M02",
+   "dataset": 2,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M01_M02_0d/M02_0d/CT_M02_0d.nii.gz",
+     "expert_tumor_mm3": 86.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M01_M02_8d/M02_8d/CT_M02_8d.nii.gz",
+     "expert_tumor_mm3": 248.5
+    }
+   ]
+  },
+  {
+   "id": "D2-M03",
+   "dataset": 2,
+   "mouse": "M03",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M03_M04_0d/M03_0d/CT_M03_0d.nii.gz",
+     "expert_tumor_mm3": 207.2
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M03_M04_8d/M03_8d/CT_M03_8d.nii.gz",
+     "expert_tumor_mm3": 329.5
+    }
+   ]
+  },
+  {
+   "id": "D2-M04",
+   "dataset": 2,
+   "mouse": "M04",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M03_M04_0d/M04_0d/CT_M04_0d.nii.gz",
+     "expert_tumor_mm3": 166.3
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M03_M04_8d/M04_8d/CT_M04_8d.nii.gz",
+     "expert_tumor_mm3": 464.7
+    }
+   ]
+  },
+  {
+   "id": "D2-M05",
+   "dataset": 2,
+   "mouse": "M05",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M05_M06_0d/M05_0d/CT_M05_0d.nii.gz",
+     "expert_tumor_mm3": 65.6
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M05_M06_8d/M05_8d/CT_M05_8d.nii.gz",
+     "expert_tumor_mm3": 139.3
+    }
+   ]
+  },
+  {
+   "id": "D2-M06",
+   "dataset": 2,
+   "mouse": "M06",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M05_M06_0d/M06_0d/CT_M06_0d.nii.gz",
+     "expert_tumor_mm3": 69.3
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M05_M06_8d/M06_8d/CT_M06_8d.nii.gz",
+     "expert_tumor_mm3": 262.8
+    }
+   ]
+  },
+  {
+   "id": "D2-M07",
+   "dataset": 2,
+   "mouse": "M07",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M07_M08_0d/M07_0d/CT_M07_0d.nii.gz",
+     "expert_tumor_mm3": 70.6
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M07_M08_8d/M07_8d/CT_M07_8d.nii.gz",
+     "expert_tumor_mm3": 241.2
+    }
+   ]
+  },
+  {
+   "id": "D2-M08",
+   "dataset": 2,
+   "mouse": "M08",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M07_M08_0d/M08_0d/CT_M08_0d.nii.gz",
+     "expert_tumor_mm3": 151.9
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M07_M08_8d/M08_8d/CT_M08_8d.nii.gz",
+     "expert_tumor_mm3": 364.6
+    }
+   ]
+  },
+  {
+   "id": "D2-M09",
+   "dataset": 2,
+   "mouse": "M09",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M09_M10_0d/M09_0d/CT_M09_0d.nii.gz",
+     "expert_tumor_mm3": 44.3
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M09_M10_8d/M09_8d/CT_M09_8d.nii.gz",
+     "expert_tumor_mm3": 101.1
+    }
+   ]
+  },
+  {
+   "id": "D2-M10",
+   "dataset": 2,
+   "mouse": "M10",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M09_M10_0d/M10_0d/CT_M10_0d.nii.gz",
+     "expert_tumor_mm3": 46.7
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M09_M10_8d/M10_8d/CT_M10_8d.nii.gz",
+     "expert_tumor_mm3": 147.0
+    }
+   ]
+  },
+  {
+   "id": "D2-M11",
+   "dataset": 2,
+   "mouse": "M11",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M11_M12_0d/M11_0d/CT_M11_0d.nii.gz",
+     "expert_tumor_mm3": 70.4
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M11_M12_8d/M11_8d/CT_M11_8d.nii.gz",
+     "expert_tumor_mm3": 139.6
+    }
+   ]
+  },
+  {
+   "id": "D2-M12",
+   "dataset": 2,
+   "mouse": "M12",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M11_M12_0d/M12_0d/CT_M12_0d.nii.gz",
+     "expert_tumor_mm3": 64.7
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M11_M12_8d/M12_8d/CT_M12_8d.nii.gz",
+     "expert_tumor_mm3": 381.3
+    }
+   ]
+  },
+  {
+   "id": "D2-M13",
+   "dataset": 2,
+   "mouse": "M13",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M13_M14_0d/M13_0d/CT_M13_0d.nii.gz",
+     "expert_tumor_mm3": 89.9
+    }
+   ]
+  },
+  {
+   "id": "D2-M14",
+   "dataset": 2,
+   "mouse": "M14",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M13_M14_0d/M14_0d/CT_M14_0d.nii.gz",
+     "expert_tumor_mm3": 106.8
+    }
+   ]
+  },
+  {
+   "id": "D2-M15",
+   "dataset": 2,
+   "mouse": "M15",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M15_M16_0d/M15_0d/CT_M15_0d.nii.gz",
+     "expert_tumor_mm3": 133.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M15_M16_8d/M15_8d/CT_M15_8d.nii.gz",
+     "expert_tumor_mm3": 483.0
+    }
+   ]
+  },
+  {
+   "id": "D2-M16",
+   "dataset": 2,
+   "mouse": "M16",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M15_M16_0d/M16_0d/CT_M16_0d.nii.gz",
+     "expert_tumor_mm3": 79.2
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M15_M16_8d/M16_8d/CT_M16_8d.nii.gz",
+     "expert_tumor_mm3": 161.7
+    }
+   ]
+  },
+  {
+   "id": "D2-M17",
+   "dataset": 2,
+   "mouse": "M17",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M17_M18_0d/M17_0d/CT_M17_0d.nii.gz",
+     "expert_tumor_mm3": 114.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M17_M18_8d/M17_8d/CT_M17_8d.nii.gz",
+     "expert_tumor_mm3": 502.2
+    }
+   ]
+  },
+  {
+   "id": "D2-M18",
+   "dataset": 2,
+   "mouse": "M18",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M17_M18_0d/M18_0d/CT_M18_0d.nii.gz",
+     "expert_tumor_mm3": 207.9
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M17_M18_8d/M18_8d/CT_M18_8d.nii.gz",
+     "expert_tumor_mm3": 285.6
+    }
+   ]
+  },
+  {
+   "id": "D2-M19",
+   "dataset": 2,
+   "mouse": "M19",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M19_M20_0d/M19_0d/CT_M19_0d.nii.gz",
+     "expert_tumor_mm3": 130.0
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M19_M20_8d/M19_8d/CT_M19_8d.nii.gz",
+     "expert_tumor_mm3": 401.9
+    }
+   ]
+  },
+  {
+   "id": "D2-M20",
+   "dataset": 2,
+   "mouse": "M20",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M19_M20_0d/M20_0d/CT_M20_0d.nii.gz",
+     "expert_tumor_mm3": 83.0
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M19_M20_8d/M20_8d/CT_M20_8d.nii.gz",
+     "expert_tumor_mm3": 208.2
+    }
+   ]
+  },
+  {
+   "id": "D2-M21",
+   "dataset": 2,
+   "mouse": "M21",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M21_M22_0d/M21_0d/CT_M21_0d.nii.gz",
+     "expert_tumor_mm3": 49.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M21_M22_8d/M21_8d/CT_M21_8d.nii.gz",
+     "expert_tumor_mm3": 167.8
+    }
+   ]
+  },
+  {
+   "id": "D2-M22",
+   "dataset": 2,
+   "mouse": "M22",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M21_M22_0d/M22_0d/CT_M22_0d.nii.gz",
+     "expert_tumor_mm3": 91.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M21_M22_8d/M22_8d/CT_M22_8d.nii.gz",
+     "expert_tumor_mm3": 214.3
+    }
+   ]
+  },
+  {
+   "id": "D2-M23",
+   "dataset": 2,
+   "mouse": "M23",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M23_M24_0d/M23_0d/CT_M23_0d.nii.gz",
+     "expert_tumor_mm3": 159.2
+    }
+   ]
+  },
+  {
+   "id": "D2-M24",
+   "dataset": 2,
+   "mouse": "M24",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M23_M24_0d/M24_0d/CT_M24_0d.nii.gz",
+     "expert_tumor_mm3": 116.9
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M14_M24_8d/M24_8d/CT_M24_8d.nii.gz",
+     "expert_tumor_mm3": 232.5
+    }
+   ]
+  },
+  {
+   "id": "D2-M25",
+   "dataset": 2,
+   "mouse": "M25",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M25_M26_0d/M25_0d/CT_M25_0d.nii.gz",
+     "expert_tumor_mm3": 139.1
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M25_M26_8d/M25_8d/CT_M25_8d.nii.gz",
+     "expert_tumor_mm3": 445.9
+    }
+   ]
+  },
+  {
+   "id": "D2-M26",
+   "dataset": 2,
+   "mouse": "M26",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M25_M26_0d/M26_0d/CT_M26_0d.nii.gz",
+     "expert_tumor_mm3": 50.2
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M25_M26_8d/M26_8d/CT_M26_8d.nii.gz",
+     "expert_tumor_mm3": 73.2
+    }
+   ]
+  },
+  {
+   "id": "D2-M27",
+   "dataset": 2,
+   "mouse": "M27",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M27_M28_0d/M27_0d/CT_M27_0d.nii.gz",
+     "expert_tumor_mm3": 113.3
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M27_M28_8d/M27_8d/CT_M27_8d.nii.gz",
+     "expert_tumor_mm3": 260.9
+    }
+   ]
+  },
+  {
+   "id": "D2-M28",
+   "dataset": 2,
+   "mouse": "M28",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M27_M28_0d/M28_0d/CT_M28_0d.nii.gz",
+     "expert_tumor_mm3": 70.0
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M27_M28_8d/M28_8d/CT_M28_8d.nii.gz",
+     "expert_tumor_mm3": 91.6
+    }
+   ]
+  },
+  {
+   "id": "D2-M29",
+   "dataset": 2,
+   "mouse": "M29",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M29_M30_0d/M29_0d/CT_M29_0d.nii.gz",
+     "expert_tumor_mm3": 57.6
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M29_M30_8d/M29_8d/CT_M29_8d.nii.gz",
+     "expert_tumor_mm3": 93.6
+    }
+   ]
+  },
+  {
+   "id": "D2-M30",
+   "dataset": 2,
+   "mouse": "M30",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M29_M30_0d/M30_0d/CT_M30_0d.nii.gz",
+     "expert_tumor_mm3": 138.1
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M29_M30_8d/M30_8d/CT_M30_8d.nii.gz",
+     "expert_tumor_mm3": 547.3
+    }
+   ]
+  },
+  {
+   "id": "D2-M31",
+   "dataset": 2,
+   "mouse": "M31",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M31_M32_0d/M31_0d/CT_M31_0d.nii.gz",
+     "expert_tumor_mm3": 105.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M31_M32_8d/M31_8d/CT_M31_8d.nii.gz",
+     "expert_tumor_mm3": 238.0
+    }
+   ]
+  },
+  {
+   "id": "D2-M32",
+   "dataset": 2,
+   "mouse": "M32",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 2/M31_M32_0d/M32_0d/CT_M32_0d.nii.gz",
+     "expert_tumor_mm3": 98.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 2/M31_M32_8d/M32_8d/CT_M32_8d.nii.gz",
+     "expert_tumor_mm3": 296.3
+    }
+   ]
+  },
+  {
+   "id": "D3-M01",
+   "dataset": 3,
+   "mouse": "M01",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 3/M01_M02_0h/M01_0h/CT_M01_0h.nii.gz",
+     "expert_tumor_mm3": 342.1
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M01_M02_24h/M01_24h/CT_M01_24h.nii.gz",
+     "expert_tumor_mm3": 731.8
+    }
+   ]
+  },
+  {
+   "id": "D3-M02",
+   "dataset": 3,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 3/M01_M02_0h/M02_0h/CT_M02_0h.nii.gz",
+     "expert_tumor_mm3": 206.5
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M01_M02_24h/M02_24h/CT_M02_24h.nii.gz",
+     "expert_tumor_mm3": 258.5
+    }
+   ]
+  },
+  {
+   "id": "D3-M03",
+   "dataset": 3,
+   "mouse": "M03",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 3/M03_M04_0h/M03_0h/CT_M03_0h.nii.gz",
+     "expert_tumor_mm3": 194.5
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M03_M04_24h/M03_24h/CT_M03_24h.nii.gz",
+     "expert_tumor_mm3": 245.3
+    }
+   ]
+  },
+  {
+   "id": "D3-M04",
+   "dataset": 3,
+   "mouse": "M04",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 3/M03_M04_0h/M04_0h/CT_M04_0h.nii.gz",
+     "expert_tumor_mm3": 382.4
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M03_M04_24h/M04_24h/CT_M04_24h.nii.gz",
+     "expert_tumor_mm3": 523.4
+    }
+   ]
+  },
+  {
+   "id": "D3-M05",
+   "dataset": 3,
+   "mouse": "M05",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 3/M05_M06_0h/M05_0h/CT_M05_0h.nii.gz",
+     "expert_tumor_mm3": 257.5
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M05_M06_24h/M05_24h/CT_M05_24h.nii.gz",
+     "expert_tumor_mm3": 443.8
+    }
+   ]
+  },
+  {
+   "id": "D3-M06",
+   "dataset": 3,
+   "mouse": "M06",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 3/M05_M06_0h/M06_0h/CT_M06_0h.nii.gz",
+     "expert_tumor_mm3": 69.9
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M05_M06_24h/M06_24h/CT_M06_24h.nii.gz",
+     "expert_tumor_mm3": 87.8
+    }
+   ]
+  },
+  {
+   "id": "D3-M07",
+   "dataset": 3,
+   "mouse": "M07",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M07_M08_24h/M07_24h/CT_M07_24h.nii.gz",
+     "expert_tumor_mm3": 182.9
+    }
+   ]
+  },
+  {
+   "id": "D3-M08",
+   "dataset": 3,
+   "mouse": "M08",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M07_M08_24h/M08_24h/CT_M08_24h.nii.gz",
+     "expert_tumor_mm3": 387.8
+    }
+   ]
+  },
+  {
+   "id": "D3-M09",
+   "dataset": 3,
+   "mouse": "M09",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M09_M10_24h/M09_24h/CT_M09_24h.nii.gz",
+     "expert_tumor_mm3": 665.5
+    }
+   ]
+  },
+  {
+   "id": "D3-M10",
+   "dataset": 3,
+   "mouse": "M10",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M09_M10_24h/M10_24h/CT_M10_24h.nii.gz",
+     "expert_tumor_mm3": 196.8
+    }
+   ]
+  },
+  {
+   "id": "D3-M11",
+   "dataset": 3,
+   "mouse": "M11",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M11_M12_24h/M11_24h/CT_M11_24h.nii.gz",
+     "expert_tumor_mm3": 90.5
+    }
+   ]
+  },
+  {
+   "id": "D3-M12",
+   "dataset": 3,
+   "mouse": "M12",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M11_M12_24h/M12_24h/CT_M12_24h.nii.gz",
+     "expert_tumor_mm3": 857.3
+    }
+   ]
+  },
+  {
+   "id": "D3-M13",
+   "dataset": 3,
+   "mouse": "M13",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M13_M14_24h/M13_24h/CT_M13_24h.nii.gz",
+     "expert_tumor_mm3": 456.6
+    }
+   ]
+  },
+  {
+   "id": "D3-M14",
+   "dataset": 3,
+   "mouse": "M14",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M13_M14_24h/M14_24h/CT_M14_24h.nii.gz",
+     "expert_tumor_mm3": 102.6
+    }
+   ]
+  },
+  {
+   "id": "D3-M15",
+   "dataset": 3,
+   "mouse": "M15",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M15_M16_24h/M15_24h/CT_M15_24h.nii.gz",
+     "expert_tumor_mm3": 211.4
+    }
+   ]
+  },
+  {
+   "id": "D3-M16",
+   "dataset": 3,
+   "mouse": "M16",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M15_M16_24h/M16_24h/CT_M16_24h.nii.gz",
+     "expert_tumor_mm3": 95.4
+    }
+   ]
+  },
+  {
+   "id": "D3-M17",
+   "dataset": 3,
+   "mouse": "M17",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M17_M18_24h/M17_24h/CT_M17_24h.nii.gz",
+     "expert_tumor_mm3": 101.7
+    }
+   ]
+  },
+  {
+   "id": "D3-M18",
+   "dataset": 3,
+   "mouse": "M18",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 3/M17_M18_24h/M18_24h/CT_M18_24h.nii.gz",
+     "expert_tumor_mm3": 798.3
+    }
+   ]
+  },
+  {
+   "id": "D4-M01",
+   "dataset": 4,
+   "mouse": "M01",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M01_M02_0h/M01_0h/CT_M01_0h.nii.gz",
+     "expert_tumor_mm3": 36.6
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M01_M02_2h/M01_2h/CT_M01_2h.nii.gz",
+     "expert_tumor_mm3": 30.8
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M01_M02_6h/M01_6h/CT_M01_6h.nii.gz",
+     "expert_tumor_mm3": 24.7
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M01_M02_16h/M01_16h/CT_M01_16h.nii.gz",
+     "expert_tumor_mm3": 31.1
+    }
+   ]
+  },
+  {
+   "id": "D4-M02",
+   "dataset": 4,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M01_M02_0h/M02_0h/CT_M02_0h.nii.gz",
+     "expert_tumor_mm3": 54.0
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M01_M02_2h/M02_2h/CT_M02_2h.nii.gz",
+     "expert_tumor_mm3": 37.7
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M01_M02_6h/M02_6h/CT_M02_6h.nii.gz",
+     "expert_tumor_mm3": 36.2
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M01_M02_16h/M02_16h/CT_M02_16h.nii.gz",
+     "expert_tumor_mm3": 41.5
+    }
+   ]
+  },
+  {
+   "id": "D4-M03",
+   "dataset": 4,
+   "mouse": "M03",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M03_M04_0h/M03_0h/CT_M03_0h.nii.gz",
+     "expert_tumor_mm3": 47.7
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M03_M04_2h/M03_2h/CT_M03_2h.nii.gz",
+     "expert_tumor_mm3": 37.1
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M03_M04_6h/M03_6h/CT_M03_6h.nii.gz",
+     "expert_tumor_mm3": 35.3
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M03_M04_16h/M03_16h/CT_M03_16h.nii.gz",
+     "expert_tumor_mm3": 34.8
+    }
+   ]
+  },
+  {
+   "id": "D4-M04",
+   "dataset": 4,
+   "mouse": "M04",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M03_M04_0h/M04_0h/CT_M04_0h.nii.gz",
+     "expert_tumor_mm3": 16.7
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M03_M04_2h/M04_2h/CT_M04_2h.nii.gz",
+     "expert_tumor_mm3": 15.2
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M03_M04_6h/M04_6h/CT_M04_6h.nii.gz",
+     "expert_tumor_mm3": 14.4
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M03_M04_16h/M04_16h/CT_M04_16h.nii.gz",
+     "expert_tumor_mm3": 16.6
+    }
+   ]
+  },
+  {
+   "id": "D4-M05",
+   "dataset": 4,
+   "mouse": "M05",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M05_M06_0h/M05_0h/CT_M05_0h.nii.gz",
+     "expert_tumor_mm3": 81.1
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M05_M06_2h/M05_2h/CT_M05_2h.nii.gz",
+     "expert_tumor_mm3": 83.9
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M05_M06_6h/M05_6h/CT_M05_6h.nii.gz",
+     "expert_tumor_mm3": 71.3
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M05_M06_16h/M05_16h/CT_M05_16h.nii.gz",
+     "expert_tumor_mm3": 83.3
+    }
+   ]
+  },
+  {
+   "id": "D4-M06",
+   "dataset": 4,
+   "mouse": "M06",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M05_M06_0h/M06_0h/CT_M06_0h.nii.gz",
+     "expert_tumor_mm3": 83.0
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M05_M06_2h/M06_2h/CT_M06_2h.nii.gz",
+     "expert_tumor_mm3": 72.1
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M05_M06_6h/M06_6h/CT_M06_6h.nii.gz",
+     "expert_tumor_mm3": 72.8
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M05_M06_16h/M06_16h/CT_M06_16h.nii.gz",
+     "expert_tumor_mm3": 76.4
+    }
+   ]
+  },
+  {
+   "id": "D4-M07",
+   "dataset": 4,
+   "mouse": "M07",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M07_M08_0h/M07_0h/CT_M07_0h.nii.gz",
+     "expert_tumor_mm3": 120.2
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M07_M08_2h/M07_2h/CT_M07_2h.nii.gz",
+     "expert_tumor_mm3": 121.3
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M07_M08_6h/M07_6h/CT_M07_6h.nii.gz",
+     "expert_tumor_mm3": 110.6
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M07_M08_16h/M07_16h/CT_M07_16h.nii.gz",
+     "expert_tumor_mm3": 120.0
+    }
+   ]
+  },
+  {
+   "id": "D4-M08",
+   "dataset": 4,
+   "mouse": "M08",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M07_M08_0h/M08_0h/CT_M08_0h.nii.gz",
+     "expert_tumor_mm3": 171.2
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M07_M08_2h/M08_2h/CT_M08_2h.nii.gz",
+     "expert_tumor_mm3": 160.0
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M07_M08_6h/M08_6h/CT_M08_6h.nii.gz",
+     "expert_tumor_mm3": 160.1
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M07_M08_16h/M08_16h/CT_M08_16h.nii.gz",
+     "expert_tumor_mm3": 183.0
+    }
+   ]
+  },
+  {
+   "id": "D4-M09",
+   "dataset": 4,
+   "mouse": "M09",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M09_M10_0h/M09_0h/CT_M09_0h.nii.gz",
+     "expert_tumor_mm3": 150.3
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M09_M10_2h/M09_2h/CT_M09_2h.nii.gz",
+     "expert_tumor_mm3": 146.0
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M09_M10_6h/M09_6h/CT_M09_6h.nii.gz",
+     "expert_tumor_mm3": 137.3
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M09_M10_16h/M09_16h/CT_M09_16h.nii.gz",
+     "expert_tumor_mm3": 162.4
+    }
+   ]
+  },
+  {
+   "id": "D4-M10",
+   "dataset": 4,
+   "mouse": "M10",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 4/M09_M10_0h/M10_0h/CT_M10_0h.nii.gz",
+     "expert_tumor_mm3": 226.0
+    },
+    {
+     "tp": "2h",
+     "ct": "Dataset 4/M09_M10_2h/M10_2h/CT_M10_2h.nii.gz",
+     "expert_tumor_mm3": 216.3
+    },
+    {
+     "tp": "6h",
+     "ct": "Dataset 4/M09_M10_6h/M10_6h/CT_M10_6h.nii.gz",
+     "expert_tumor_mm3": 213.1
+    },
+    {
+     "tp": "16h",
+     "ct": "Dataset 4/M09_M10_16h/M10_16h/CT_M10_16h.nii.gz",
+     "expert_tumor_mm3": 241.1
+    }
+   ]
+  },
+  {
+   "id": "D5-M01",
+   "dataset": 5,
+   "mouse": "M01",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M01_M02_0h/M01_0h/CT_M01_0h.nii.gz",
+     "expert_tumor_mm3": 105.4
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M01_M02_24h/M01_24h/CT_M01_24h.nii.gz",
+     "expert_tumor_mm3": 133.7
+    }
+   ]
+  },
+  {
+   "id": "D5-M02",
+   "dataset": 5,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M01_M02_0h/M02_0h/CT_M02_0h.nii.gz",
+     "expert_tumor_mm3": 974.9
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M01_M02_24h/M02_24h/CT_M02_24h.nii.gz",
+     "expert_tumor_mm3": 1192.5
+    }
+   ]
+  },
+  {
+   "id": "D5-M03",
+   "dataset": 5,
+   "mouse": "M03",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M03_M04_0h/M03_0h/CT_M03_0h.nii.gz",
+     "expert_tumor_mm3": 573.7
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M03_M06_24h/M03_24h/CT_M03_24h.nii.gz",
+     "expert_tumor_mm3": 697.0
+    }
+   ]
+  },
+  {
+   "id": "D5-M04",
+   "dataset": 5,
+   "mouse": "M04",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M03_M04_0h/M04_0h/CT_M04_0h.nii.gz",
+     "expert_tumor_mm3": 447.0
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M04_M05_24h/M04_24h/CT_M04_24h.nii.gz",
+     "expert_tumor_mm3": 453.4
+    }
+   ]
+  },
+  {
+   "id": "D5-M05",
+   "dataset": 5,
+   "mouse": "M05",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M05_M06_0h/M05_0h/CT_M05_0h.nii.gz",
+     "expert_tumor_mm3": 1074.0
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M04_M05_24h/M05_24h/CT_M05_24h.nii.gz",
+     "expert_tumor_mm3": 1272.7
+    }
+   ]
+  },
+  {
+   "id": "D5-M06",
+   "dataset": 5,
+   "mouse": "M06",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M05_M06_0h/M06_0h/CT_M06_0h.nii.gz",
+     "expert_tumor_mm3": 1156.6
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M03_M06_24h/M06_24h/CT_M06_24h.nii.gz",
+     "expert_tumor_mm3": 1242.7
+    }
+   ]
+  },
+  {
+   "id": "D5-M07",
+   "dataset": 5,
+   "mouse": "M07",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M07_M08_0h/M07_0h/CT_M07_0h.nii.gz",
+     "expert_tumor_mm3": 56.1
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M07_M08_24h/M07_24h/CT_M07_24h.nii.gz",
+     "expert_tumor_mm3": 112.2
+    }
+   ]
+  },
+  {
+   "id": "D5-M08",
+   "dataset": 5,
+   "mouse": "M08",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M07_M08_0h/M08_0h/CT_M08_0h.nii.gz",
+     "expert_tumor_mm3": 337.0
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M07_M08_24h/M08_24h/CT_M08_24h.nii.gz",
+     "expert_tumor_mm3": 362.5
+    }
+   ]
+  },
+  {
+   "id": "D5-M09",
+   "dataset": 5,
+   "mouse": "M09",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M09_M10_0h/M09_0h/CT_M09_0h.nii.gz",
+     "expert_tumor_mm3": 335.6
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M09_M10_24h/M09_24h/CT_M09_24h.nii.gz",
+     "expert_tumor_mm3": 395.5
+    }
+   ]
+  },
+  {
+   "id": "D5-M10",
+   "dataset": 5,
+   "mouse": "M10",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M09_M10_0h/M10_0h/CT_M10_0h.nii.gz",
+     "expert_tumor_mm3": 1069.5
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M09_M10_24h/M10_24h/CT_M10_24h.nii.gz",
+     "expert_tumor_mm3": 923.4
+    }
+   ]
+  },
+  {
+   "id": "D5-M11",
+   "dataset": 5,
+   "mouse": "M11",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M11_M12_0h/M11_0h/CT_M11_0h.nii.gz",
+     "expert_tumor_mm3": 967.4
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M11_M12_24h/M11_24h/CT_M11_24h.nii.gz",
+     "expert_tumor_mm3": 1048.2
+    }
+   ]
+  },
+  {
+   "id": "D5-M12",
+   "dataset": 5,
+   "mouse": "M12",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M11_M12_0h/M12_0h/CT_M12_0h.nii.gz",
+     "expert_tumor_mm3": 1152.9
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M11_M12_24h/M12_24h/CT_M12_24h.nii.gz",
+     "expert_tumor_mm3": 1389.9
+    }
+   ]
+  },
+  {
+   "id": "D5-M13",
+   "dataset": 5,
+   "mouse": "M13",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M13_M14_0h/M13_0h/CT_M13_0h.nii.gz",
+     "expert_tumor_mm3": 181.7
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M13_M14_24h/M13_24h/CT_M13_24h.nii.gz",
+     "expert_tumor_mm3": 225.2
+    }
+   ]
+  },
+  {
+   "id": "D5-M14",
+   "dataset": 5,
+   "mouse": "M14",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M13_M14_0h/M14_0h/CT_M14_0h.nii.gz",
+     "expert_tumor_mm3": 2779.5
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M13_M14_24h/M14_24h/CT_M14_24h.nii.gz",
+     "expert_tumor_mm3": 2990.3
+    }
+   ]
+  },
+  {
+   "id": "D5-M15",
+   "dataset": 5,
+   "mouse": "M15",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M15_M16_24h/M15_24h/CT_M15_24h.nii.gz",
+     "expert_tumor_mm3": 65.2
+    }
+   ]
+  },
+  {
+   "id": "D5-M16",
+   "dataset": 5,
+   "mouse": "M16",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M15_M16_24h/M16_24h/CT_M16_24h.nii.gz",
+     "expert_tumor_mm3": 240.8
+    }
+   ]
+  },
+  {
+   "id": "D5-M17",
+   "dataset": 5,
+   "mouse": "M17",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M17_M18_0h/M17_0h/CT_M17_0h.nii.gz",
+     "expert_tumor_mm3": 170.6
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M17_M18_24h/M17_24h/CT_M17_24h.nii.gz",
+     "expert_tumor_mm3": 196.5
+    }
+   ]
+  },
+  {
+   "id": "D5-M18",
+   "dataset": 5,
+   "mouse": "M18",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M17_M18_0h/M18_0h/CT_M18_0h.nii.gz",
+     "expert_tumor_mm3": 209.8
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M17_M18_24h/M18_24h/CT_M18_24h.nii.gz",
+     "expert_tumor_mm3": 232.0
+    }
+   ]
+  },
+  {
+   "id": "D5-M19",
+   "dataset": 5,
+   "mouse": "M19",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M19_M20_0h/M19_0h/CT_M19_0h.nii.gz",
+     "expert_tumor_mm3": 367.7
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M19_M20_24h/M19_24h/CT_M19_24h.nii.gz",
+     "expert_tumor_mm3": 416.9
+    }
+   ]
+  },
+  {
+   "id": "D5-M20",
+   "dataset": 5,
+   "mouse": "M20",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M19_M20_0h/M20_0h/CT_M20_0h.nii.gz",
+     "expert_tumor_mm3": 747.6
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M19_M20_24h/M20_24h/CT_M20_24h.nii.gz",
+     "expert_tumor_mm3": 793.0
+    }
+   ]
+  },
+  {
+   "id": "D5-M21",
+   "dataset": 5,
+   "mouse": "M21",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M21_M22_0h/M21_0h/CT_M21_0h.nii.gz",
+     "expert_tumor_mm3": 3312.9
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M21_M22_24h/M21_24h/CT_M21_24h.nii.gz",
+     "expert_tumor_mm3": 3527.9
+    }
+   ]
+  },
+  {
+   "id": "D5-M22",
+   "dataset": 5,
+   "mouse": "M22",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M21_M22_0h/M22_0h/CT_M22_0h.nii.gz",
+     "expert_tumor_mm3": 2836.1
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M21_M22_24h/M22_24h/CT_M22_24h.nii.gz",
+     "expert_tumor_mm3": 3106.6
+    }
+   ]
+  },
+  {
+   "id": "D5-M23",
+   "dataset": 5,
+   "mouse": "M23",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M23_M24_0h/M23_0h/CT_M23_0h.nii.gz",
+     "expert_tumor_mm3": 199.1
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M23_M24_24h/M23_24h/CT_M23_24h.nii.gz",
+     "expert_tumor_mm3": 214.8
+    }
+   ]
+  },
+  {
+   "id": "D5-M24",
+   "dataset": 5,
+   "mouse": "M24",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M23_M24_0h/M24_0h/CT_M24_0h.nii.gz",
+     "expert_tumor_mm3": 266.2
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M23_M24_24h/M24_24h/CT_M24_24h.nii.gz",
+     "expert_tumor_mm3": 261.0
+    }
+   ]
+  },
+  {
+   "id": "D5-M25",
+   "dataset": 5,
+   "mouse": "M25",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M25_M26_0h/M25_0h/CT_M25_0h.nii.gz",
+     "expert_tumor_mm3": 272.1
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M25_M26_24h/M25_24h/CT_M25_24h.nii.gz",
+     "expert_tumor_mm3": 299.3
+    }
+   ]
+  },
+  {
+   "id": "D5-M26",
+   "dataset": 5,
+   "mouse": "M26",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M25_M26_0h/M26_0h/CT_M26_0h.nii.gz",
+     "expert_tumor_mm3": 341.9
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M25_M26_24h/M26_24h/CT_M26_24h.nii.gz",
+     "expert_tumor_mm3": 399.6
+    }
+   ]
+  },
+  {
+   "id": "D5-M27",
+   "dataset": 5,
+   "mouse": "M27",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M27_M28_0h/M27_0h/CT_M27_0h.nii.gz",
+     "expert_tumor_mm3": 1753.3
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M27_M28_24h/M27_24h/CT_M27_24h.nii.gz",
+     "expert_tumor_mm3": 1740.2
+    }
+   ]
+  },
+  {
+   "id": "D5-M28",
+   "dataset": 5,
+   "mouse": "M28",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 5/M27_M28_0h/M28_0h/CT_M28_0h.nii.gz",
+     "expert_tumor_mm3": 3698.5
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 5/M27_M28_24h/M28_24h/CT_M28_24h.nii.gz",
+     "expert_tumor_mm3": 3776.2
+    }
+   ]
+  },
+  {
+   "id": "D6-M01",
+   "dataset": 6,
+   "mouse": "M01",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M01_M02_0d/M01_0d/CT_M01_0d.nii.gz",
+     "expert_tumor_mm3": 201.5
+    },
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M01_M02_7d/M01_7d/CT_M01_7d.nii.gz",
+     "expert_tumor_mm3": 138.2
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 6/M01_M02_13d/M01_13d/CT_M01_13d.nii.gz",
+     "expert_tumor_mm3": 74.1
+    }
+   ]
+  },
+  {
+   "id": "D6-M02",
+   "dataset": 6,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M01_M02_0d/M02_0d/CT_M02_0d.nii.gz",
+     "expert_tumor_mm3": 178.0
+    },
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M01_M02_7d/M02_7d/CT_M02_7d.nii.gz",
+     "expert_tumor_mm3": 306.5
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 6/M01_M02_13d/M02_13d/CT_M02_13d.nii.gz",
+     "expert_tumor_mm3": 458.4
+    }
+   ]
+  },
+  {
+   "id": "D6-M03",
+   "dataset": 6,
+   "mouse": "M03",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M03_M04_7d/M03_7d/CT_M03_7d.nii.gz",
+     "expert_tumor_mm3": 276.9
+    }
+   ]
+  },
+  {
+   "id": "D6-M04",
+   "dataset": 6,
+   "mouse": "M04",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M03_M04_0d/M04_0d/CT_M04_0d.nii.gz",
+     "expert_tumor_mm3": 196.2
+    },
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M03_M04_7d/M04_7d/CT_M04_7d.nii.gz",
+     "expert_tumor_mm3": 204.3
+    }
+   ]
+  },
+  {
+   "id": "D6-M05",
+   "dataset": 6,
+   "mouse": "M05",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M05_M06_0d/M05_0d/CT_M05_0d.nii.gz",
+     "expert_tumor_mm3": 354.2
+    }
+   ]
+  },
+  {
+   "id": "D6-M06",
+   "dataset": 6,
+   "mouse": "M06",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M05_M06_0d/M06_0d/CT_M06_0d.nii.gz",
+     "expert_tumor_mm3": 274.8
+    },
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M06_M07_7d/M06_7d/CT_M06_7d.nii.gz",
+     "expert_tumor_mm3": 321.2
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 6/M06_M08_13d/M06_13d/CT_M06_13d.nii.gz",
+     "expert_tumor_mm3": 402.9
+    }
+   ]
+  },
+  {
+   "id": "D6-M07",
+   "dataset": 6,
+   "mouse": "M07",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M06_M07_7d/M07_7d/CT_M07_7d.nii.gz",
+     "expert_tumor_mm3": 144.1
+    }
+   ]
+  },
+  {
+   "id": "D6-M08",
+   "dataset": 6,
+   "mouse": "M08",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M08_M09_0d/M08_0d/CT_M08_0d.nii.gz",
+     "expert_tumor_mm3": 190.9
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 6/M06_M08_13d/M08_13d/CT_M08_13d.nii.gz",
+     "expert_tumor_mm3": 303.9
+    },
+    {
+     "tp": "day20",
+     "ct": "Dataset 6/M08_M09_20d/M08_20d/CT_M08_20d.nii.gz",
+     "expert_tumor_mm3": 309.6
+    }
+   ]
+  },
+  {
+   "id": "D6-M09",
+   "dataset": 6,
+   "mouse": "M09",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M08_M09_0d/M09_0d/CT_M09_0d.nii.gz",
+     "expert_tumor_mm3": 173.9
+    },
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M09_M10_7d/M09_7d/CT_M09_7d.nii.gz",
+     "expert_tumor_mm3": 210.0
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 6/M09_M10_13d/M09_13d/CT_M09_13d.nii.gz",
+     "expert_tumor_mm3": 209.1
+    },
+    {
+     "tp": "day20",
+     "ct": "Dataset 6/M08_M09_20d/M09_20d/CT_M09_20d.nii.gz",
+     "expert_tumor_mm3": 172.3
+    }
+   ]
+  },
+  {
+   "id": "D6-M10",
+   "dataset": 6,
+   "mouse": "M10",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M09_M10_7d/M10_7d/CT_M10_7d.nii.gz",
+     "expert_tumor_mm3": 265.5
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 6/M09_M10_13d/M10_13d/CT_M10_13d.nii.gz",
+     "expert_tumor_mm3": 255.7
+    },
+    {
+     "tp": "day20",
+     "ct": "Dataset 6/M10_M12_20d/M10_20d/CT_M10_20d.nii.gz",
+     "expert_tumor_mm3": 250.7
+    }
+   ]
+  },
+  {
+   "id": "D6-M11",
+   "dataset": 6,
+   "mouse": "M11",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M11_M12_7d/M11_7d/CT_M11_7d.nii.gz",
+     "expert_tumor_mm3": 85.5
+    }
+   ]
+  },
+  {
+   "id": "D6-M12",
+   "dataset": 6,
+   "mouse": "M12",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M12_M13_0d/M12_0d/CT_M12_0d.nii.gz",
+     "expert_tumor_mm3": 261.9
+    },
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M11_M12_7d/M12_7d/CT_M12_7d.nii.gz",
+     "expert_tumor_mm3": 245.1
+    },
+    {
+     "tp": "day20",
+     "ct": "Dataset 6/M10_M12_20d/M12_20d/CT_M12_20d.nii.gz",
+     "expert_tumor_mm3": 295.8
+    }
+   ]
+  },
+  {
+   "id": "D6-M13",
+   "dataset": 6,
+   "mouse": "M13",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M12_M13_0d/M13_0d/CT_M13_0d.nii.gz",
+     "expert_tumor_mm3": 158.1
+    }
+   ]
+  },
+  {
+   "id": "D6-M14",
+   "dataset": 6,
+   "mouse": "M14",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day20",
+     "ct": "Dataset 6/M14_M15_20d/M14_20d/CT_M14_20d.nii.gz",
+     "expert_tumor_mm3": 127.0
+    }
+   ]
+  },
+  {
+   "id": "D6-M15",
+   "dataset": 6,
+   "mouse": "M15",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M15_M16_0d/M15_0d/CT_M15_0d.nii.gz",
+     "expert_tumor_mm3": 223.3
+    },
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M15_M16_7d/M15_7d/CT_M15_7d.nii.gz",
+     "expert_tumor_mm3": 201.7
+    },
+    {
+     "tp": "day20",
+     "ct": "Dataset 6/M14_M15_20d/M15_20d/CT_M15_20d.nii.gz",
+     "expert_tumor_mm3": 242.5
+    }
+   ]
+  },
+  {
+   "id": "D6-M16",
+   "dataset": 6,
+   "mouse": "M16",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M15_M16_0d/M16_0d/CT_M16_0d.nii.gz",
+     "expert_tumor_mm3": 124.1
+    },
+    {
+     "tp": "day7",
+     "ct": "Dataset 6/M15_M16_7d/M16_7d/CT_M16_7d.nii.gz",
+     "expert_tumor_mm3": 222.3
+    }
+   ]
+  },
+  {
+   "id": "D6-M17",
+   "dataset": 6,
+   "mouse": "M17",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M17_M18_0d/M17_0d/CT_M17_0d.nii.gz",
+     "expert_tumor_mm3": 256.7
+    }
+   ]
+  },
+  {
+   "id": "D6-M18",
+   "dataset": 6,
+   "mouse": "M18",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 6/M17_M18_0d/M18_0d/CT_M18_0d.nii.gz",
+     "expert_tumor_mm3": 259.7
+    }
+   ]
+  },
+  {
+   "id": "D7-M01",
+   "dataset": 7,
+   "mouse": "M01",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 7/M01_M02_0h/M01_0h/CT_M01_0h.nii.gz",
+     "expert_tumor_mm3": 565.6
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 7/M01_M02_3h/M01_3h/CT_M01_3h.nii.gz",
+     "expert_tumor_mm3": 596.5
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 7/M01_M02_24h/M01_24h/CT_M01_24h.nii.gz",
+     "expert_tumor_mm3": 668.5
+    }
+   ]
+  },
+  {
+   "id": "D7-M02",
+   "dataset": 7,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 7/M01_M02_0h/M02_0h/CT_M02_0h.nii.gz",
+     "expert_tumor_mm3": 1480.1
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 7/M01_M02_3h/M02_3h/CT_M02_3h.nii.gz",
+     "expert_tumor_mm3": 1510.8
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 7/M01_M02_24h/M02_24h/CT_M02_24h.nii.gz",
+     "expert_tumor_mm3": 1510.9
+    }
+   ]
+  },
+  {
+   "id": "D7-M03",
+   "dataset": 7,
+   "mouse": "M03",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 7/M03_M04_0h/M03_0h/CT_M03_0h.nii.gz",
+     "expert_tumor_mm3": 418.1
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 7/M03_M04_3h/M03_3h/CT_M03_3h.nii.gz",
+     "expert_tumor_mm3": 382.9
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 7/M03_M04_24h/M03_24h/CT_M03_24h.nii.gz",
+     "expert_tumor_mm3": 466.6
+    }
+   ]
+  },
+  {
+   "id": "D7-M04",
+   "dataset": 7,
+   "mouse": "M04",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 7/M03_M04_0h/M04_0h/CT_M04_0h.nii.gz",
+     "expert_tumor_mm3": 637.9
+    },
+    {
+     "tp": "3h",
+     "ct": "Dataset 7/M03_M04_3h/M04_3h/CT_M04_3h.nii.gz",
+     "expert_tumor_mm3": 727.2
+    },
+    {
+     "tp": "24h",
+     "ct": "Dataset 7/M03_M04_24h/M04_24h/CT_M04_24h.nii.gz",
+     "expert_tumor_mm3": 452.1
+    }
+   ]
+  },
+  {
+   "id": "D8-M01",
+   "dataset": 8,
+   "mouse": "M01",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M01_M02_M03_M04_0d/M01_0d/CT_M01_0d.nii.gz",
+     "expert_tumor_mm3": 896.3
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M01_M02_M03_M04_6d/M01_6d/CT_M01_6d.nii.gz",
+     "expert_tumor_mm3": 1199.2
+    }
+   ]
+  },
+  {
+   "id": "D8-M02",
+   "dataset": 8,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M01_M02_M03_M04_0d/M02_0d/CT_M02_0d.nii.gz",
+     "expert_tumor_mm3": 117.0
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M01_M02_M03_M04_6d/M02_6d/CT_M02_6d.nii.gz",
+     "expert_tumor_mm3": 147.0
+    }
+   ]
+  },
+  {
+   "id": "D8-M03",
+   "dataset": 8,
+   "mouse": "M03",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M01_M02_M03_M04_0d/M03_0d/CT_M03_0d.nii.gz",
+     "expert_tumor_mm3": 622.6
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M01_M02_M03_M04_6d/M03_6d/CT_M03_6d.nii.gz",
+     "expert_tumor_mm3": 882.1
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M03_M04_M23_M24_8d/M03_8d/CT_M03_8d.nii.gz",
+     "expert_tumor_mm3": 973.8
+    }
+   ]
+  },
+  {
+   "id": "D8-M04",
+   "dataset": 8,
+   "mouse": "M04",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M01_M02_M03_M04_0d/M04_0d/CT_M04_0d.nii.gz",
+     "expert_tumor_mm3": 287.0
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M01_M02_M03_M04_6d/M04_6d/CT_M04_6d.nii.gz",
+     "expert_tumor_mm3": 439.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M03_M04_M23_M24_8d/M04_8d/CT_M04_8d.nii.gz",
+     "expert_tumor_mm3": 449.3
+    }
+   ]
+  },
+  {
+   "id": "D8-M05",
+   "dataset": 8,
+   "mouse": "M05",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M05_M06_M07_M08_0d/M05_0d/CT_M05_0d.nii.gz",
+     "expert_tumor_mm3": 557.3
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M05_M06_M07_M08_6d/M05_6d/CT_M05_6d.nii.gz",
+     "expert_tumor_mm3": 589.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M05_M07_M09_M10_8d/M05_8d/CT_M05_8d.nii.gz",
+     "expert_tumor_mm3": 639.4
+    }
+   ]
+  },
+  {
+   "id": "D8-M06",
+   "dataset": 8,
+   "mouse": "M06",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M05_M06_M07_M08_0d/M06_0d/CT_M06_0d.nii.gz",
+     "expert_tumor_mm3": 893.3
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M05_M06_M07_M08_6d/M06_6d/CT_M06_6d.nii.gz",
+     "expert_tumor_mm3": 919.9
+    }
+   ]
+  },
+  {
+   "id": "D8-M07",
+   "dataset": 8,
+   "mouse": "M07",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M05_M06_M07_M08_0d/M07_0d/CT_M07_0d.nii.gz",
+     "expert_tumor_mm3": 98.2
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M05_M06_M07_M08_6d/M07_6d/CT_M07_6d.nii.gz",
+     "expert_tumor_mm3": 143.6
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M05_M07_M09_M10_8d/M07_8d/CT_M07_8d.nii.gz",
+     "expert_tumor_mm3": 133.7
+    }
+   ]
+  },
+  {
+   "id": "D8-M08",
+   "dataset": 8,
+   "mouse": "M08",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M05_M06_M07_M08_0d/M08_0d/CT_M08_0d.nii.gz",
+     "expert_tumor_mm3": 71.6
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M05_M06_M07_M08_6d/M08_6d/CT_M08_6d.nii.gz",
+     "expert_tumor_mm3": 83.9
+    }
+   ]
+  },
+  {
+   "id": "D8-M09",
+   "dataset": 8,
+   "mouse": "M09",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M09_M10_M25_M26_0d/M09_0d/CT_M09_0d.nii.gz",
+     "expert_tumor_mm3": 291.2
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M05_M07_M09_M10_8d/M09_8d/CT_M09_8d.nii.gz",
+     "expert_tumor_mm3": 292.1
+    }
+   ]
+  },
+  {
+   "id": "D8-M10",
+   "dataset": 8,
+   "mouse": "M10",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M09_M10_M25_M26_0d/M10_0d/CT_M10_0d.nii.gz",
+     "expert_tumor_mm3": 180.1
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M05_M07_M09_M10_8d/M10_8d/CT_M10_8d.nii.gz",
+     "expert_tumor_mm3": 195.7
+    }
+   ]
+  },
+  {
+   "id": "D8-M11",
+   "dataset": 8,
+   "mouse": "M11",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M11_M12_M13_M14_0d/M11_0d/CT_M11_0d.nii.gz",
+     "expert_tumor_mm3": 67.3
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M11_M12_M13_M14_6d/M11_6d/CT_M11_6d.nii.gz",
+     "expert_tumor_mm3": 77.2
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M11_M13_M15_M16_8d/M11_8d/CT_M11_8d.nii.gz",
+     "expert_tumor_mm3": 69.7
+    }
+   ]
+  },
+  {
+   "id": "D8-M12",
+   "dataset": 8,
+   "mouse": "M12",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M11_M12_M13_M14_0d/M12_0d/CT_M12_0d.nii.gz",
+     "expert_tumor_mm3": 91.1
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M11_M12_M13_M14_6d/M12_6d/CT_M12_6d.nii.gz",
+     "expert_tumor_mm3": 110.9
+    }
+   ]
+  },
+  {
+   "id": "D8-M13",
+   "dataset": 8,
+   "mouse": "M13",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M11_M12_M13_M14_0d/M13_0d/CT_M13_0d.nii.gz",
+     "expert_tumor_mm3": 331.8
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M11_M12_M13_M14_6d/M13_6d/CT_M13_6d.nii.gz",
+     "expert_tumor_mm3": 565.7
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M11_M13_M15_M16_8d/M13_8d/CT_M13_8d.nii.gz",
+     "expert_tumor_mm3": 629.8
+    }
+   ]
+  },
+  {
+   "id": "D8-M14",
+   "dataset": 8,
+   "mouse": "M14",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M11_M12_M13_M14_0d/M14_0d/CT_M14_0d.nii.gz",
+     "expert_tumor_mm3": 206.5
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M11_M12_M13_M14_6d/M14_6d/CT_M14_6d.nii.gz",
+     "expert_tumor_mm3": 265.2
+    }
+   ]
+  },
+  {
+   "id": "D8-M15",
+   "dataset": 8,
+   "mouse": "M15",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M15_M29_M16_M30_0d/M15_0d/CT_M15_0d.nii.gz",
+     "expert_tumor_mm3": 552.9
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M15_M29_M16_M30_6d/M15_6d/CT_M15_6d.nii.gz",
+     "expert_tumor_mm3": 776.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M11_M13_M15_M16_8d/M15_8d/CT_M15_8d.nii.gz",
+     "expert_tumor_mm3": 845.7
+    }
+   ]
+  },
+  {
+   "id": "D8-M16",
+   "dataset": 8,
+   "mouse": "M16",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M15_M29_M16_M30_0d/M16_0d/CT_M16_0d.nii.gz",
+     "expert_tumor_mm3": 502.3
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M15_M29_M16_M30_6d/M16_6d/CT_M16_6d.nii.gz",
+     "expert_tumor_mm3": 757.4
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M11_M13_M15_M16_8d/M16_8d/CT_M16_8d.nii.gz",
+     "expert_tumor_mm3": 813.4
+    }
+   ]
+  },
+  {
+   "id": "D8-M17",
+   "dataset": 8,
+   "mouse": "M17",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M17_M18_M19_M20_6d/M17_6d/CT_M17_6d.nii.gz",
+     "expert_tumor_mm3": 833.2
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M17_M20_M21_M22_8d/M17_8d/CT_M17_8d.nii.gz",
+     "expert_tumor_mm3": 950.2
+    }
+   ]
+  },
+  {
+   "id": "D8-M18",
+   "dataset": 8,
+   "mouse": "M18",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M17_M18_M19_M20_6d/M18_6d/CT_M18_6d.nii.gz",
+     "expert_tumor_mm3": 650.5
+    }
+   ]
+  },
+  {
+   "id": "D8-M19",
+   "dataset": 8,
+   "mouse": "M19",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M17_M18_M19_M20_6d/M19_6d/CT_M19_6d.nii.gz",
+     "expert_tumor_mm3": 311.4
+    }
+   ]
+  },
+  {
+   "id": "D8-M20",
+   "dataset": 8,
+   "mouse": "M20",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M17_M18_M19_M20_6d/M20_6d/CT_M20_6d.nii.gz",
+     "expert_tumor_mm3": 303.7
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M17_M20_M21_M22_8d/M20_8d/CT_M20_8d.nii.gz",
+     "expert_tumor_mm3": 335.2
+    }
+   ]
+  },
+  {
+   "id": "D8-M21",
+   "dataset": 8,
+   "mouse": "M21",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M21_M31_M22_M33_0d/M21_0d/CT_M21_0d.nii.gz",
+     "expert_tumor_mm3": 349.8
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M21_M31_M22_M32_6d/M21_6d/CT_M21_6d.nii.gz",
+     "expert_tumor_mm3": 382.2
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M17_M20_M21_M22_8d/M21_8d/CT_M21_8d.nii.gz",
+     "expert_tumor_mm3": 426.7
+    }
+   ]
+  },
+  {
+   "id": "D8-M22",
+   "dataset": 8,
+   "mouse": "M22",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M21_M31_M22_M33_0d/M22_0d/CT_M22_0d.nii.gz",
+     "expert_tumor_mm3": 115.9
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M21_M31_M22_M32_6d/M22_6d/CT_M22_6d.nii.gz",
+     "expert_tumor_mm3": 171.3
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M17_M20_M21_M22_8d/M22_8d/CT_M22_8d.nii.gz",
+     "expert_tumor_mm3": 207.9
+    }
+   ]
+  },
+  {
+   "id": "D8-M23",
+   "dataset": 8,
+   "mouse": "M23",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M27_M28_M23_M24_0d/M23_0d/CT_M23_0d.nii.gz",
+     "expert_tumor_mm3": 538.4
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M27_M28_M23_M24_6d/M23_6d/CT_M23_6d.nii.gz",
+     "expert_tumor_mm3": 870.9
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M03_M04_M23_M24_8d/M23_8d/CT_M23_8d.nii.gz",
+     "expert_tumor_mm3": 910.2
+    }
+   ]
+  },
+  {
+   "id": "D8-M24",
+   "dataset": 8,
+   "mouse": "M24",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M27_M28_M23_M24_0d/M24_0d/CT_M24_0d.nii.gz",
+     "expert_tumor_mm3": 260.4
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M27_M28_M23_M24_6d/M24_6d/CT_M24_6d.nii.gz",
+     "expert_tumor_mm3": 535.2
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M03_M04_M23_M24_8d/M24_8d/CT_M24_8d.nii.gz",
+     "expert_tumor_mm3": 619.5
+    }
+   ]
+  },
+  {
+   "id": "D8-M25",
+   "dataset": 8,
+   "mouse": "M25",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M09_M10_M25_M26_0d/M25_0d/CT_M25_0d.nii.gz",
+     "expert_tumor_mm3": 515.8
+    }
+   ]
+  },
+  {
+   "id": "D8-M26",
+   "dataset": 8,
+   "mouse": "M26",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M09_M10_M25_M26_0d/M26_0d/CT_M26_0d.nii.gz",
+     "expert_tumor_mm3": 125.6
+    }
+   ]
+  },
+  {
+   "id": "D8-M27",
+   "dataset": 8,
+   "mouse": "M27",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M27_M28_M23_M24_0d/M27_0d/CT_M27_0d.nii.gz",
+     "expert_tumor_mm3": 137.0
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M27_M28_M23_M24_6d/M27_6d/CT_M27_6d.nii.gz",
+     "expert_tumor_mm3": 314.0
+    }
+   ]
+  },
+  {
+   "id": "D8-M28",
+   "dataset": 8,
+   "mouse": "M28",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M27_M28_M23_M24_0d/M28_0d/CT_M28_0d.nii.gz",
+     "expert_tumor_mm3": 281.8
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M27_M28_M23_M24_6d/M28_6d/CT_M28_6d.nii.gz",
+     "expert_tumor_mm3": 437.8
+    }
+   ]
+  },
+  {
+   "id": "D8-M29",
+   "dataset": 8,
+   "mouse": "M29",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M15_M29_M16_M30_0d/M29_0d/CT_M29_0d.nii.gz",
+     "expert_tumor_mm3": 1265.6
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M15_M29_M16_M30_6d/M29_6d/CT_M29_6d.nii.gz",
+     "expert_tumor_mm3": 1916.4
+    }
+   ]
+  },
+  {
+   "id": "D8-M30",
+   "dataset": 8,
+   "mouse": "M30",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M15_M29_M16_M30_0d/M30_0d/CT_M30_0d.nii.gz",
+     "expert_tumor_mm3": 177.0
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M15_M29_M16_M30_6d/M30_6d/CT_M30_6d.nii.gz",
+     "expert_tumor_mm3": 291.0
+    }
+   ]
+  },
+  {
+   "id": "D8-M31",
+   "dataset": 8,
+   "mouse": "M31",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M21_M31_M22_M33_0d/M31_0d/CT_M31_0d.nii.gz",
+     "expert_tumor_mm3": 54.7
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M21_M31_M22_M32_6d/M31_6d/CT_M31_6d.nii.gz",
+     "expert_tumor_mm3": 65.9
+    }
+   ]
+  },
+  {
+   "id": "D8-M32",
+   "dataset": 8,
+   "mouse": "M32",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M38_M39_M32_M37_0d/M32_0d/CT_M32_0d.nii.gz",
+     "expert_tumor_mm3": 608.5
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M21_M31_M22_M32_6d/M32_6d/CT_M32_6d.nii.gz",
+     "expert_tumor_mm3": 690.5
+    }
+   ]
+  },
+  {
+   "id": "D8-M33",
+   "dataset": 8,
+   "mouse": "M33",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M21_M31_M22_M33_0d/M33_0d/CT_M33_0d.nii.gz",
+     "expert_tumor_mm3": 432.1
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M38_M39_M33_M40_6d/M33_6d/CT_M33_6d.nii.gz",
+     "expert_tumor_mm3": 542.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M38_M35_M33_M37_8d/M33_8d/CT_M33_8d.nii.gz",
+     "expert_tumor_mm3": 594.4
+    }
+   ]
+  },
+  {
+   "id": "D8-M34",
+   "dataset": 8,
+   "mouse": "M34",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M34_M35_M36_M37_0d/M34_0d/CT_M34_0d.nii.gz",
+     "expert_tumor_mm3": 164.7
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M34_M35_M36_M37_6d/M34_6d/CT_M34_6d.nii.gz",
+     "expert_tumor_mm3": 363.6
+    }
+   ]
+  },
+  {
+   "id": "D8-M35",
+   "dataset": 8,
+   "mouse": "M35",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M34_M35_M36_M37_0d/M35_0d/CT_M35_0d.nii.gz",
+     "expert_tumor_mm3": 383.3
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M34_M35_M36_M37_6d/M35_6d/CT_M35_6d.nii.gz",
+     "expert_tumor_mm3": 516.1
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M38_M35_M33_M37_8d/M35_8d/CT_M35_8d.nii.gz",
+     "expert_tumor_mm3": 525.8
+    }
+   ]
+  },
+  {
+   "id": "D8-M36",
+   "dataset": 8,
+   "mouse": "M36",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M34_M35_M36_M37_0d/M36_0d/CT_M36_0d.nii.gz",
+     "expert_tumor_mm3": 140.3
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M34_M35_M36_M37_6d/M36_6d/CT_M36_6d.nii.gz",
+     "expert_tumor_mm3": 220.5
+    }
+   ]
+  },
+  {
+   "id": "D8-M37",
+   "dataset": 8,
+   "mouse": "M37",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M34_M35_M36_M37_0d/M37_0d/CT_M37_0d.nii.gz",
+     "expert_tumor_mm3": 381.7
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M34_M35_M36_M37_6d/M37_6d/CT_M37_6d.nii.gz",
+     "expert_tumor_mm3": 805.5
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M38_M35_M33_M37_8d/M37_8d/CT_M37_8d.nii.gz",
+     "expert_tumor_mm3": 924.6
+    }
+   ]
+  },
+  {
+   "id": "D8-M38",
+   "dataset": 8,
+   "mouse": "M38",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M38_M39_M32_M37_0d/M38_0d/CT_M38_0d.nii.gz",
+     "expert_tumor_mm3": 311.5
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M38_M39_M33_M40_6d/M38_6d/CT_M38_6d.nii.gz",
+     "expert_tumor_mm3": 363.7
+    },
+    {
+     "tp": "day8",
+     "ct": "Dataset 8/M38_M35_M33_M37_8d/M38_8d/CT_M38_8d.nii.gz",
+     "expert_tumor_mm3": 452.5
+    }
+   ]
+  },
+  {
+   "id": "D8-M39",
+   "dataset": 8,
+   "mouse": "M39",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 8/M38_M39_M32_M37_0d/M39_0d/CT_M39_0d.nii.gz",
+     "expert_tumor_mm3": 399.2
+    },
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M38_M39_M33_M40_6d/M39_6d/CT_M39_6d.nii.gz",
+     "expert_tumor_mm3": 416.8
+    }
+   ]
+  },
+  {
+   "id": "D8-M40",
+   "dataset": 8,
+   "mouse": "M40",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day6",
+     "ct": "Dataset 8/M38_M39_M33_M40_6d/M40_6d/CT_M40_6d.nii.gz",
+     "expert_tumor_mm3": 707.6
+    }
+   ]
+  },
+  {
+   "id": "D9-M01",
+   "dataset": 9,
+   "mouse": "M01",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M01_M02_0h/M01_0h/CT_M01_0h.nii.gz",
+     "expert_tumor_mm3": 483.4
+    }
+   ]
+  },
+  {
+   "id": "D9-M02",
+   "dataset": 9,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M01_M02_0h/M02_0h/CT_M02_0h.nii.gz",
+     "expert_tumor_mm3": 401.3
+    }
+   ]
+  },
+  {
+   "id": "D9-M03",
+   "dataset": 9,
+   "mouse": "M03",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M03_M04_0h/M03_0h/CT_M03_0h.nii.gz",
+     "expert_tumor_mm3": 192.1
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M03_M04_18h/M03_18h/CT_M03_18h.nii.gz",
+     "expert_tumor_mm3": 246.2
+    }
+   ]
+  },
+  {
+   "id": "D9-M04",
+   "dataset": 9,
+   "mouse": "M04",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M03_M04_0h/M04_0h/CT_M04_0h.nii.gz",
+     "expert_tumor_mm3": 241.2
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M03_M04_18h/M04_18h/CT_M04_18h.nii.gz",
+     "expert_tumor_mm3": 314.5
+    }
+   ]
+  },
+  {
+   "id": "D9-M05",
+   "dataset": 9,
+   "mouse": "M05",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M05_M06_0h/M05_0h/CT_M05_0h.nii.gz",
+     "expert_tumor_mm3": 321.9
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M05_M06_18h/M05_18h/CT_M05_18h.nii.gz",
+     "expert_tumor_mm3": 491.9
+    }
+   ]
+  },
+  {
+   "id": "D9-M06",
+   "dataset": 9,
+   "mouse": "M06",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M05_M06_0h/M06_0h/CT_M06_0h.nii.gz",
+     "expert_tumor_mm3": 1017.6
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M05_M06_18h/M06_18h/CT_M06_18h.nii.gz",
+     "expert_tumor_mm3": 1219.8
+    }
+   ]
+  },
+  {
+   "id": "D9-M07",
+   "dataset": 9,
+   "mouse": "M07",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M07_M08_0h/M07_0h/CT_M07_0h.nii.gz",
+     "expert_tumor_mm3": 478.9
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M07_M08_18h/M07_18h/CT_M07_18h.nii.gz",
+     "expert_tumor_mm3": 603.9
+    }
+   ]
+  },
+  {
+   "id": "D9-M08",
+   "dataset": 9,
+   "mouse": "M08",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M07_M08_0h/M08_0h/CT_M08_0h.nii.gz",
+     "expert_tumor_mm3": 132.0
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M07_M08_18h/M08_18h/CT_M08_18h.nii.gz",
+     "expert_tumor_mm3": 179.5
+    }
+   ]
+  },
+  {
+   "id": "D9-M09",
+   "dataset": 9,
+   "mouse": "M09",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M09_M10_0h/M09_0h/CT_M09_0h.nii.gz",
+     "expert_tumor_mm3": 261.5
+    }
+   ]
+  },
+  {
+   "id": "D9-M10",
+   "dataset": 9,
+   "mouse": "M10",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M09_M10_0h/M10_0h/CT_M10_0h.nii.gz",
+     "expert_tumor_mm3": 247.4
+    }
+   ]
+  },
+  {
+   "id": "D9-M11",
+   "dataset": 9,
+   "mouse": "M11",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M11_M12_0h/M11_0h/CT_M11_0h.nii.gz",
+     "expert_tumor_mm3": 163.0
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M11_M12_18h/M11_18h/CT_M11_18h.nii.gz",
+     "expert_tumor_mm3": 196.5
+    }
+   ]
+  },
+  {
+   "id": "D9-M12",
+   "dataset": 9,
+   "mouse": "M12",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M11_M12_0h/M12_0h/CT_M12_0h.nii.gz",
+     "expert_tumor_mm3": 464.2
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M11_M12_18h/M12_18h/CT_M12_18h.nii.gz",
+     "expert_tumor_mm3": 572.3
+    }
+   ]
+  },
+  {
+   "id": "D9-M13",
+   "dataset": 9,
+   "mouse": "M13",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M13_M14_0h/M13_0h/CT_M13_0h.nii.gz",
+     "expert_tumor_mm3": 275.1
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M13_M14_18h/M13_18h/CT_M13_18h.nii.gz",
+     "expert_tumor_mm3": 340.8
+    }
+   ]
+  },
+  {
+   "id": "D9-M14",
+   "dataset": 9,
+   "mouse": "M14",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M13_M14_0h/M14_0h/CT_M14_0h.nii.gz",
+     "expert_tumor_mm3": 433.0
+    },
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M13_M14_18h/M14_18h/CT_M14_18h.nii.gz",
+     "expert_tumor_mm3": 550.1
+    }
+   ]
+  },
+  {
+   "id": "D9-M15",
+   "dataset": 9,
+   "mouse": "M15",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M15_M16_18h/M15_18h/CT_M15_18h.nii.gz",
+     "expert_tumor_mm3": 1004.4
+    }
+   ]
+  },
+  {
+   "id": "D9-M16",
+   "dataset": 9,
+   "mouse": "M16",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "18h",
+     "ct": "Dataset 9/M15_M16_18h/M16_18h/CT_M16_18h.nii.gz",
+     "expert_tumor_mm3": 699.8
+    }
+   ]
+  },
+  {
+   "id": "D9-M17",
+   "dataset": 9,
+   "mouse": "M17",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M17_M18_0h/M17_0h/CT_M17_0h.nii.gz",
+     "expert_tumor_mm3": 817.2
+    }
+   ]
+  },
+  {
+   "id": "D9-M18",
+   "dataset": 9,
+   "mouse": "M18",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "0h",
+     "ct": "Dataset 9/M17_M18_0h/M18_0h/CT_M18_0h.nii.gz",
+     "expert_tumor_mm3": 478.8
+    }
+   ]
+  },
+  {
+   "id": "D10-M01",
+   "dataset": 10,
+   "mouse": "M01",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M01_M26_M21_M34_13d/M01_13d/CT_M01_13d.nii.gz",
+     "expert_tumor_mm3": 334.7
+    }
+   ]
+  },
+  {
+   "id": "D10-M02",
+   "dataset": 10,
+   "mouse": "M02",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M02_M03_M04_M05_0d/M02_0d/CT_M02_0d.nii.gz",
+     "expert_tumor_mm3": 111.9
+    }
+   ]
+  },
+  {
+   "id": "D10-M03",
+   "dataset": 10,
+   "mouse": "M03",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M02_M03_M04_M05_0d/M03_0d/CT_M03_0d.nii.gz",
+     "expert_tumor_mm3": 253.0
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M03_M04_M05_M07_13d/M03_13d/CT_M03_13d.nii.gz",
+     "expert_tumor_mm3": 245.6
+    }
+   ]
+  },
+  {
+   "id": "D10-M04",
+   "dataset": 10,
+   "mouse": "M04",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M02_M03_M04_M05_0d/M04_0d/CT_M04_0d.nii.gz",
+     "expert_tumor_mm3": 250.3
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M03_M04_M05_M07_13d/M04_13d/CT_M04_13d.nii.gz",
+     "expert_tumor_mm3": 100.0
+    }
+   ]
+  },
+  {
+   "id": "D10-M05",
+   "dataset": 10,
+   "mouse": "M05",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M02_M03_M04_M05_0d/M05_0d/CT_M05_0d.nii.gz",
+     "expert_tumor_mm3": 188.0
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M03_M04_M05_M07_13d/M05_13d/CT_M05_13d.nii.gz",
+     "expert_tumor_mm3": 176.1
+    }
+   ]
+  },
+  {
+   "id": "D10-M06",
+   "dataset": 10,
+   "mouse": "M06",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M06_M14_M21_M35_0d/M06_0d/CT_M06_0d.nii.gz",
+     "expert_tumor_mm3": 231.5
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M06_M35_M36_M14_13d/M06_13d/CT_M06_13d.nii.gz",
+     "expert_tumor_mm3": 324.3
+    }
+   ]
+  },
+  {
+   "id": "D10-M07",
+   "dataset": 10,
+   "mouse": "M07",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M07_M08_M09_M10_0d/M07_0d/CT_M07_0d.nii.gz",
+     "expert_tumor_mm3": 54.1
+    }
+   ]
+  },
+  {
+   "id": "D10-M08",
+   "dataset": 10,
+   "mouse": "M08",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M07_M08_M09_M10_0d/M08_0d/CT_M08_0d.nii.gz",
+     "expert_tumor_mm3": 130.0
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M08_M09_M12_M13_13d/M08_13d/CT_M08_13d.nii.gz",
+     "expert_tumor_mm3": 60.0
+    }
+   ]
+  },
+  {
+   "id": "D10-M09",
+   "dataset": 10,
+   "mouse": "M09",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M07_M08_M09_M10_0d/M09_0d/CT_M09_0d.nii.gz",
+     "expert_tumor_mm3": 135.7
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M08_M09_M12_M13_13d/M09_13d/CT_M09_13d.nii.gz",
+     "expert_tumor_mm3": 135.4
+    }
+   ]
+  },
+  {
+   "id": "D10-M10",
+   "dataset": 10,
+   "mouse": "M10",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M07_M08_M09_M10_0d/M10_0d/CT_M10_0d.nii.gz",
+     "expert_tumor_mm3": 128.1
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M10_M22_M23_M29_13d/M10_13d/CT_M10_13d.nii.gz",
+     "expert_tumor_mm3": 254.6
+    }
+   ]
+  },
+  {
+   "id": "D10-M11",
+   "dataset": 10,
+   "mouse": "M11",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M11_M12_M13_M15_0d/M11_0d/CT_M11_0d.nii.gz",
+     "expert_tumor_mm3": 111.5
+    }
+   ]
+  },
+  {
+   "id": "D10-M12",
+   "dataset": 10,
+   "mouse": "M12",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M11_M12_M13_M15_0d/M12_0d/CT_M12_0d.nii.gz",
+     "expert_tumor_mm3": 279.8
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M08_M09_M12_M13_13d/M12_13d/CT_M12_13d.nii.gz",
+     "expert_tumor_mm3": 253.4
+    }
+   ]
+  },
+  {
+   "id": "D10-M13",
+   "dataset": 10,
+   "mouse": "M13",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M11_M12_M13_M15_0d/M13_0d/CT_M13_0d.nii.gz",
+     "expert_tumor_mm3": 122.6
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M08_M09_M12_M13_13d/M13_13d/CT_M13_13d.nii.gz",
+     "expert_tumor_mm3": 156.5
+    }
+   ]
+  },
+  {
+   "id": "D10-M14",
+   "dataset": 10,
+   "mouse": "M14",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M06_M14_M21_M35_0d/M14_0d/CT_M14_0d.nii.gz",
+     "expert_tumor_mm3": 180.5
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M06_M35_M36_M14_13d/M14_13d/CT_M14_13d.nii.gz",
+     "expert_tumor_mm3": 150.6
+    }
+   ]
+  },
+  {
+   "id": "D10-M15",
+   "dataset": 10,
+   "mouse": "M15",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M11_M12_M13_M15_0d/M15_0d/CT_M15_0d.nii.gz",
+     "expert_tumor_mm3": 279.3
+    }
+   ]
+  },
+  {
+   "id": "D10-M16",
+   "dataset": 10,
+   "mouse": "M16",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M16_M17_M18_M20_0d/M16_0d/CT_M16_0d.nii.gz",
+     "expert_tumor_mm3": 194.5
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M16_M17_M30_M31_13d/M16_13d/CT_M16_13d.nii.gz",
+     "expert_tumor_mm3": 133.8
+    }
+   ]
+  },
+  {
+   "id": "D10-M17",
+   "dataset": 10,
+   "mouse": "M17",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M16_M17_M18_M20_0d/M17_0d/CT_M17_0d.nii.gz",
+     "expert_tumor_mm3": 219.5
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M16_M17_M30_M31_13d/M17_13d/CT_M17_13d.nii.gz",
+     "expert_tumor_mm3": 154.1
+    }
+   ]
+  },
+  {
+   "id": "D10-M18",
+   "dataset": 10,
+   "mouse": "M18",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M16_M17_M18_M20_0d/M18_0d/CT_M18_0d.nii.gz",
+     "expert_tumor_mm3": 369.1
+    }
+   ]
+  },
+  {
+   "id": "D10-M19",
+   "dataset": 10,
+   "mouse": "M19",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M19_M30_M32_M40_0d/M19_0d/CT_M19_0d.nii.gz",
+     "expert_tumor_mm3": 230.2
+    }
+   ]
+  },
+  {
+   "id": "D10-M20",
+   "dataset": 10,
+   "mouse": "M20",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M16_M17_M18_M20_0d/M20_0d/CT_M20_0d.nii.gz",
+     "expert_tumor_mm3": 162.4
+    }
+   ]
+  },
+  {
+   "id": "D10-M21",
+   "dataset": 10,
+   "mouse": "M21",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M06_M14_M21_M35_0d/M21_0d/CT_M21_0d.nii.gz",
+     "expert_tumor_mm3": 284.0
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M01_M26_M21_M34_13d/M21_13d/CT_M21_13d.nii.gz",
+     "expert_tumor_mm3": 145.2
+    }
+   ]
+  },
+  {
+   "id": "D10-M22",
+   "dataset": 10,
+   "mouse": "M22",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M22_M23_M25_M27_0d/M22_0d/CT_M22_0d.nii.gz",
+     "expert_tumor_mm3": 187.5
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M10_M22_M23_M29_13d/M22_13d/CT_M22_13d.nii.gz",
+     "expert_tumor_mm3": 162.3
+    }
+   ]
+  },
+  {
+   "id": "D10-M23",
+   "dataset": 10,
+   "mouse": "M23",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M22_M23_M25_M27_0d/M23_0d/CT_M23_0d.nii.gz",
+     "expert_tumor_mm3": 92.1
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M10_M22_M23_M29_13d/M23_13d/CT_M23_13d.nii.gz",
+     "expert_tumor_mm3": 179.5
+    }
+   ]
+  },
+  {
+   "id": "D10-M24",
+   "dataset": 10,
+   "mouse": "M24",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M24_M26_M34_M36_0d/M24_0d/CT_M24_0d.nii.gz",
+     "expert_tumor_mm3": 145.3
+    }
+   ]
+  },
+  {
+   "id": "D10-M25",
+   "dataset": 10,
+   "mouse": "M25",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M22_M23_M25_M27_0d/M25_0d/CT_M25_0d.nii.gz",
+     "expert_tumor_mm3": 128.7
+    }
+   ]
+  },
+  {
+   "id": "D10-M26",
+   "dataset": 10,
+   "mouse": "M26",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M24_M26_M34_M36_0d/M26_0d/CT_M26_0d.nii.gz",
+     "expert_tumor_mm3": 132.0
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M01_M26_M21_M34_13d/M26_13d/CT_M26_13d.nii.gz",
+     "expert_tumor_mm3": 172.8
+    }
+   ]
+  },
+  {
+   "id": "D10-M27",
+   "dataset": 10,
+   "mouse": "M27",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M22_M23_M25_M27_0d/M27_0d/CT_M27_0d.nii.gz",
+     "expert_tumor_mm3": 138.7
+    }
+   ]
+  },
+  {
+   "id": "D10-M28",
+   "dataset": 10,
+   "mouse": "M28",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M25_M28_M37_M38_13d/M28_13d/CT_M28_13d.nii.gz",
+     "expert_tumor_mm3": 412.1
+    }
+   ]
+  },
+  {
+   "id": "D10-M29",
+   "dataset": 10,
+   "mouse": "M29",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M10_M22_M23_M29_13d/M29_13d/CT_M29_13d.nii.gz",
+     "expert_tumor_mm3": 457.4
+    }
+   ]
+  },
+  {
+   "id": "D10-M30",
+   "dataset": 10,
+   "mouse": "M30",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M19_M30_M32_M40_0d/M30_0d/CT_M30_0d.nii.gz",
+     "expert_tumor_mm3": 223.9
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M16_M17_M30_M31_13d/M30_13d/CT_M30_13d.nii.gz",
+     "expert_tumor_mm3": 400.9
+    }
+   ]
+  },
+  {
+   "id": "D10-M31",
+   "dataset": 10,
+   "mouse": "M31",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M16_M17_M30_M31_13d/M31_13d/CT_M31_13d.nii.gz",
+     "expert_tumor_mm3": 346.2
+    }
+   ]
+  },
+  {
+   "id": "D10-M32",
+   "dataset": 10,
+   "mouse": "M32",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M19_M30_M32_M40_0d/M32_0d/CT_M32_0d.nii.gz",
+     "expert_tumor_mm3": 264.0
+    }
+   ]
+  },
+  {
+   "id": "D10-M33",
+   "dataset": 10,
+   "mouse": "M33",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M33_M37_M38_M39_0d/M33_0d/CT_M33_0d.nii.gz",
+     "expert_tumor_mm3": 195.4
+    }
+   ]
+  },
+  {
+   "id": "D10-M34",
+   "dataset": 10,
+   "mouse": "M34",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M24_M26_M34_M36_0d/M34_0d/CT_M34_0d.nii.gz",
+     "expert_tumor_mm3": 139.2
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M01_M26_M21_M34_13d/M34_13d/CT_M34_13d.nii.gz",
+     "expert_tumor_mm3": 189.5
+    }
+   ]
+  },
+  {
+   "id": "D10-M35",
+   "dataset": 10,
+   "mouse": "M35",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M06_M14_M21_M35_0d/M35_0d/CT_M35_0d.nii.gz",
+     "expert_tumor_mm3": 109.1
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M06_M35_M36_M14_13d/M35_13d/CT_M35_13d.nii.gz",
+     "expert_tumor_mm3": 259.8
+    }
+   ]
+  },
+  {
+   "id": "D10-M36",
+   "dataset": 10,
+   "mouse": "M36",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M24_M26_M34_M36_0d/M36_0d/CT_M36_0d.nii.gz",
+     "expert_tumor_mm3": 190.7
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M06_M35_M36_M14_13d/M36_13d/CT_M36_13d.nii.gz",
+     "expert_tumor_mm3": 146.6
+    }
+   ]
+  },
+  {
+   "id": "D10-M37",
+   "dataset": 10,
+   "mouse": "M37",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M33_M37_M38_M39_0d/M37_0d/CT_M37_0d.nii.gz",
+     "expert_tumor_mm3": 98.3
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M25_M28_M37_M38_13d/M37_13d/CT_M37_13d.nii.gz",
+     "expert_tumor_mm3": 59.5
+    }
+   ]
+  },
+  {
+   "id": "D10-M38",
+   "dataset": 10,
+   "mouse": "M38",
+   "held_out": true,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M33_M37_M38_M39_0d/M38_0d/CT_M38_0d.nii.gz",
+     "expert_tumor_mm3": 82.9
+    },
+    {
+     "tp": "day13",
+     "ct": "Dataset 10/M25_M28_M37_M38_13d/M38_13d/CT_M38_13d.nii.gz",
+     "expert_tumor_mm3": 141.6
+    }
+   ]
+  },
+  {
+   "id": "D10-M39",
+   "dataset": 10,
+   "mouse": "M39",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M33_M37_M38_M39_0d/M39_0d/CT_M39_0d.nii.gz",
+     "expert_tumor_mm3": 145.5
+    }
+   ]
+  },
+  {
+   "id": "D10-M40",
+   "dataset": 10,
+   "mouse": "M40",
+   "held_out": false,
+   "scans": [
+    {
+     "tp": "day0",
+     "ct": "Dataset 10/M19_M30_M32_M40_0d/M40_0d/CT_M40_0d.nii.gz",
+     "expert_tumor_mm3": 180.1
+    }
+   ]
+  }
+ ]
+}

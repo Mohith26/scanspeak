@@ -4,12 +4,12 @@ It owns the numbers (segmentations, volumes, diameters, HU) and emits a list of
 "view ops" that the NiiVue page in web/ applies. The 3D Slicer backend in
 slicer/ implements the same tool names against Slicer's own scene instead.
 
-Data: the public TumSeg database (Jensen et al., Sci Data 2024, CC-BY), mice
-from the held-out test split of the Fauxgraft project, so the tumor model has
-never seen them.
+Data: the public TumSeg database (Jensen et al., Sci Data 2024, CC-BY). Every
+animal in it (223 mice, 452 scans) is indexed in scanspeak/data/catalog.json,
+with a flag for the 55 mice held out from the tumor model's training and the
+experts' consensus tumor volume for every scan.
 """
 
-import glob
 import json
 import os
 import re
@@ -25,8 +25,8 @@ CACHE = os.environ.get("SCANSPEAK_CACHE", os.path.join(os.path.dirname(__file__)
 TUMOR_MODEL = os.environ.get("SCANSPEAK_TUMOR_MODEL",
                              os.path.join(os.path.dirname(__file__), "..", "..", "models", "tumor_unet.pt"))
 
-# Demo catalog: held-out test mice with several timepoints each.
-CATALOG = {"M37": (8, "M37"), "M33": (8, "M33"), "M07": (8, "M07"), "M15": (6, "M15")}
+with open(os.path.join(os.path.dirname(__file__), "..", "data", "catalog.json")) as _f:
+    ANIMALS = {a["id"]: a for a in json.load(_f)["animals"]}
 
 WINDOWS = {  # (min HU, max HU)
     "soft_tissue": (-200, 300),
@@ -42,24 +42,24 @@ def _tp_label(raw):          # "0d" -> "day0", "24h" -> "24h"
     return f"day{m.group(1)}" if m else raw
 
 
-def _tp_sort(label):
-    m = re.match(r"(?:day)?(\d+)(h?)", label)
-    return (int(m.group(1)) * (1 if m.group(2) else 24)) if m else 0
+def find_scans(animal_id):
+    """timepoint -> absolute CT path, in time order (catalog is pre-sorted)."""
+    return {s["tp"]: os.path.join(TUMSEG, s["ct"]) for s in ANIMALS[animal_id]["scans"]}
 
 
-def find_scans(mouse):
-    ds, mid = CATALOG[mouse]
-    out = {}
-    for p in glob.glob(os.path.join(TUMSEG, f"Dataset {ds}", "*", f"{mid}_*", f"CT_{mid}_*.nii.gz")):
-        raw = os.path.basename(os.path.dirname(p)).split("_", 1)[1]
-        out[_tp_label(raw)] = p
-    return dict(sorted(out.items(), key=lambda kv: _tp_sort(kv[0])))
+def expert_volume(animal_id, tp):
+    for s in ANIMALS[animal_id]["scans"]:
+        if s["tp"] == tp:
+            return s["expert_tumor_mm3"]
+    return None
 
 
 def normalize_tp(tp, available):
     if tp is None:
         return next(iter(available))
     t = str(tp).strip().lower().replace(" ", "").replace("_", "")
+    t = re.sub(r"(hours?|hrs?)$", "h", t)
+    t = re.sub(r"^(\d+)(days?|d)$", r"day\1", t)
     if re.fullmatch(r"\d+", t):
         t = "day" + t
     t = {"baseline": next(iter(available)), "first": next(iter(available)),
@@ -67,9 +67,69 @@ def normalize_tp(tp, available):
     return t if t in available else None
 
 
-def normalize_mouse(m):
-    d = re.search(r"(\d+)", str(m))
-    return f"M{int(d.group(1)):02d}" if d else str(m).upper()
+_TP_PATTERNS = [
+    (re.compile(r"\bday\s*(\d+)\b", re.I), lambda m: f"day{int(m.group(1))}"),
+    (re.compile(r"\b(\d+)\s*d\b", re.I), lambda m: f"day{int(m.group(1))}"),
+    (re.compile(r"\b(\d+(?:\.\d+)?)\s*(?:h|hrs?|hours?)\b", re.I), lambda m: f"{m.group(1).rstrip('0').rstrip('.') if '.' in m.group(1) else m.group(1)}h"),
+]
+
+
+def timepoints_in_text(text):
+    """Timepoints the user literally wrote, in order: 'day 8' -> day8, '22.5 hours' -> 22.5h."""
+    hits = []
+    for rx, fmt in _TP_PATTERNS:
+        hits += [(m.start(), fmt(m)) for m in rx.finditer(text or "")]
+    seen, out = set(), []
+    for _, tp in sorted(hits):
+        if tp not in seen:
+            seen.add(tp)
+            out.append(tp)
+    return out
+
+
+def animals_in_text(text):
+    """Animal ids the user literally wrote: 'D8-M37', 'dataset 4 mouse 10'."""
+    t = text or ""
+    found = [f"D{int(a)}-M{int(b):02d}" for a, b in re.findall(r"\bD\s*(\d+)\s*[-_ ]?\s*M\s*(\d+)\b", t, re.I)]
+    found += [f"D{int(a)}-M{int(b):02d}" for a, b in re.findall(r"dataset\s*(\d+)\D{0,12}?mouse\s*M?\s*(\d+)", t, re.I)]
+    return [f for i, f in enumerate(found) if f in ANIMALS and f not in found[:i]]
+
+
+def snap_tp(tp, available):
+    """If tp isn't a real scan but is within an hour of exactly one, return that one."""
+    def hrs(x):
+        m = re.fullmatch(r"day(\d+)", x)
+        if m:
+            return int(m.group(1)) * 24.0
+        m = re.fullmatch(r"([\d.]+)h", x)
+        return float(m.group(1)) if m else None
+    h = hrs(tp or "")
+    if h is None:
+        return None
+    near = [a for a in available if hrs(a) is not None and abs(hrs(a) - h) <= 1.0]
+    return near[0] if len(near) == 1 else None
+
+
+def resolve_animal(m):
+    """Accept 'D8-M37', 'd8 m37', 'dataset 8 mouse 37', '8-37', or a bare 'M37' if unique.
+
+    Returns (animal_id, None) or (None, error message listing the candidates).
+    """
+    t = str(m).strip().upper()
+    nums = [int(x) for x in re.findall(r"\d+", t)]
+    if len(nums) >= 2:
+        ds, mn = nums[0], nums[1]
+        cand = [a for a in ANIMALS.values() if a["dataset"] == ds and int(a["mouse"][1:]) == mn]
+    elif len(nums) == 1:
+        cand = [a for a in ANIMALS.values() if int(a["mouse"][1:]) == nums[0]]
+    else:
+        cand = []
+    if len(cand) == 1:
+        return cand[0]["id"], None
+    if not cand:
+        return None, f"No animal matches {m!r}. IDs look like D8-M37; open the animal list to browse all {len(ANIMALS)}."
+    ids = ", ".join(a["id"] + (" (held out)" if a["held_out"] else "") for a in cand)
+    return None, f"{m} exists in {len(cand)} datasets: {ids}. Say which one, e.g. 'open {cand[0]['id']}'."
 
 
 class TumorModel:
@@ -111,16 +171,19 @@ class VolumeBackend:
         self.layout = "four_up"
         self.measurements = []
         self._mask_cache = {}
+        self.utterance = ""   # the user's literal words for the current request
 
     # ---------------------------------------------------------- helpers
     def state_text(self):
+        n = len(ANIMALS)
         if self.scan is None:
-            return f"no scan is open; available mice: {', '.join(CATALOG)}"
+            return (f"no scan is open; {n} mice are available, with ids like D8-M37 "
+                    "(dataset 8, mouse M37); pass the id exactly as the user wrote it")
         tps = ", ".join(find_scans(self.scan[0]))
         seg = ", ".join(self.masks) or "none"
         return (f"scan {self.scan[0]} {self.scan[1]} is open; timepoints for {self.scan[0]}: {tps}; "
                 f"segmented: {seg}; layout: {self.layout}; window: {self.window}; "
-                f"other mice: {', '.join(m for m in CATALOG if m != self.scan[0])}")
+                f"{n} mice available, ids like D8-M37; pass other ids exactly as the user wrote them")
 
     def _require_scan(self):
         if self.scan is None:
@@ -217,23 +280,42 @@ class VolumeBackend:
 
     # ---------------------------------------------------------- tools
     def load_scan(self, mouse_id, timepoint=None):
-        mouse = normalize_mouse(mouse_id)
-        if mouse not in CATALOG:
-            raise ToolError(f"Mouse {mouse} isn't in this demo. Available: {', '.join(CATALOG)}.")
+        notes = []
+        said = animals_in_text(self.utterance)
+        mouse, err = resolve_animal(mouse_id)
+        if len(said) == 1 and said[0] != mouse:   # the user's literal id beats the model's paraphrase
+            mouse, err = said[0], None
+            notes.append(f"used {mouse} from your message")
+        if err:
+            raise ToolError(err)
         scans = find_scans(mouse)
         tp = normalize_tp(timepoint, scans)
+        said_tp = [t for t in timepoints_in_text(self.utterance) if t in scans]
+        if len(said_tp) == 1 and said_tp[0] != tp:
+            tp = said_tp[0]
+            notes.append(f"used {tp} from your message")
         if tp is None:
-            raise ToolError(f"{mouse} has no {timepoint} scan. Available: {', '.join(scans)}.")
+            near = snap_tp(normalize_tp(timepoint, {timepoint: 1}) or str(timepoint).lower(), scans)
+            if near:
+                tp = near
+                notes.append(f"no {timepoint} scan, using the closest: {near}")
+            else:
+                raise ToolError(f"{mouse} has no {timepoint} scan. Available: {', '.join(scans)}.")
         self.scan = (mouse, tp)
         self.ct, self.affine, self.zooms, path = self._load_ct(self.scan)
         self.header = self._last_header
         self.masks = {}
         name = f"{mouse}_{tp}_ct.nii.gz"
         dst = os.path.join(CACHE, name)
-        if not os.path.exists(dst):
+        if not os.path.lexists(dst):
             os.symlink(path, dst)
         lo, hi = WINDOWS[self.window]
-        return {"text": f"Opened {mouse} at {tp}.",
+        a = ANIMALS[mouse]
+        note = "held out from the tumor model's training" if a["held_out"] else \
+            "note: the tumor model trained on this mouse, so its tumor numbers here are optimistic"
+        if notes:
+            note = "; ".join(notes) + "; " + note
+        return {"text": f"Opened {mouse} at {tp} ({note}).",
                 "ops": [{"op": "load", "url": self._url(name), "min": lo, "max": hi}]}
 
     def set_window(self, preset):
@@ -262,13 +344,23 @@ class VolumeBackend:
         self.measurements.append({"mouse": self.scan[0], "timepoint": self.scan[1],
                                   "structure": structure, "metric": metric,
                                   "value": round(val, 2), "unit": unit})
-        return {"text": f"{structure} {metric.replace('_', ' ')} at {self.scan[1]}: {val:,.1f} {unit}.",
+        extra = ""
+        if structure == "tumor" and metric == "volume":
+            ev = expert_volume(*self.scan)
+            if ev is not None:
+                extra = f" Experts' consensus outline: {ev:,.1f} mm³."
+        return {"text": f"{structure} {metric.replace('_', ' ')} at {self.scan[1]}: {val:,.1f} {unit}.{extra}",
                 "ops": ops, "value": val}
 
     def compare_timepoints(self, structure, metric, from_timepoint, to_timepoint):
         self._require_scan()
         scans = find_scans(self.scan[0])
         a, b = normalize_tp(from_timepoint, scans), normalize_tp(to_timepoint, scans)
+        said_tp = [t for t in timepoints_in_text(self.utterance) if t in scans]
+        if len(said_tp) == 2 and [a, b] != said_tp:   # literal timepoints beat the model's paraphrase
+            a, b = said_tp
+        a = a or snap_tp(str(from_timepoint).lower(), scans)
+        b = b or snap_tp(str(to_timepoint).lower(), scans)
         if a is None or b is None:
             raise ToolError(f"{self.scan[0]} has timepoints {', '.join(scans)}.")
         vals = []
@@ -282,8 +374,13 @@ class VolumeBackend:
         for tp, v in zip((a, b), vals):
             self.measurements.append({"mouse": self.scan[0], "timepoint": tp, "structure": structure,
                                       "metric": metric, "value": round(v, 2), "unit": unit})
+        extra = ""
+        if structure == "tumor" and metric == "volume":
+            e0, e1 = expert_volume(self.scan[0], a), expert_volume(self.scan[0], b)
+            if e0 and e1:
+                extra = f" Experts' consensus: {e0:,.1f} → {e1:,.1f} mm³ ({(e1 - e0) / e0 * 100:+.0f}%)."
         return {"text": (f"{structure} {metric.replace('_', ' ')}: {vals[0]:,.1f} {unit} at {a} → "
-                         f"{vals[1]:,.1f} {unit} at {b} ({delta:+,.1f} {unit}, {pct:+.0f}%)."),
+                         f"{vals[1]:,.1f} {unit} at {b} ({delta:+,.1f} {unit}, {pct:+.0f}%).{extra}"),
                 "ops": [], "value": pct}
 
     def set_layout(self, layout):
@@ -339,9 +436,14 @@ class VolumeBackend:
         return {"text": "View reset.", "ops": [{"op": "reset", "min": lo, "max": hi}]}
 
     # ---------------------------------------------------------- dispatch
-    def execute(self, calls):
+    def execute(self, calls, utterance=""):
+        self.utterance = utterance
         results = []
-        for c in calls:
+        for i, c in enumerate(calls):
+            if results and not results[-1]["ok"]:   # never run later steps on the wrong scan
+                results.append({"call": c, "ok": False, "ops": [],
+                                "text": f"(skipped {c['name']} because the step before it failed)"})
+                continue
             fn = getattr(self, c["name"], None)
             try:
                 if fn is None or c["name"].startswith("_"):

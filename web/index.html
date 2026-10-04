@@ -55,6 +55,24 @@
   button.send { background: var(--accent); color: #062523; border: 0; border-radius: 8px; padding: 0 14px; font-weight: 600; cursor: pointer; }
   button.send:disabled { opacity: .5; }
   .thinking { color: var(--muted); font-style: italic; }
+  .abtn { background: var(--panel2); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px;
+    font-size: 12px; cursor: pointer; }
+  .abtn:hover { border-color: var(--accent); }
+  .drawer { position: absolute; inset: 0; background: #0b0d12; z-index: 5; display: none; flex-direction: column; }
+  .drawer.open { display: flex; }
+  .dtop { display: flex; gap: 10px; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  .dtop input { flex: 1; background: var(--panel2); border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: 8px 10px; font-size: 13px; outline: none; }
+  .dtop label { color: var(--muted); font-size: 12px; display: flex; gap: 6px; align-items: center; }
+  .dlist { overflow-y: auto; flex: 1; }
+  .arow { display: grid; grid-template-columns: 150px 1fr; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #1a1f2a; align-items: center; }
+  .arow .id { font: 13px var(--mono); }
+  .arow .id small { display: block; color: var(--muted); font-size: 10.5px; margin-top: 2px; }
+  .arow .ho { color: var(--accent); }
+  .tps { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tp { font: 11.5px var(--mono); background: #0f1a1c; color: var(--text); border: 1px solid #1f3b3b; border-radius: 5px; padding: 3px 8px; cursor: pointer; }
+  .tp:hover { border-color: var(--accent); color: var(--accent); }
+  .tp span { color: var(--muted); margin-left: 6px; }
+  .direct { font: 11px var(--mono); color: var(--accent2); }
 </style>
 </head>
 <body>
@@ -63,6 +81,7 @@
     <div class="logo">Scan<span>Speak</span></div>
     <div class="tag">Plain English → tool calls → micro-CT viewer. A local model picks the actions; every number comes from the tools.</div>
     <div class="pill">
+      <button class="abtn" id="openAnimals">Animals</button>
       <select id="model"></select>
       <select id="mode">
         <option value="native+repair">native + repair</option>
@@ -75,8 +94,12 @@
   </header>
   <div class="viewer">
     <canvas id="gl"></canvas>
-    <div class="empty" id="empty"><div><b>No scan open</b>Try "open M37 at day 0 and find the tumor"</div></div>
+    <div class="empty" id="empty"><div><b>No scan open</b>Pick one from Animals (top right), or type "open D8-M37 at day 0 and find the tumor"</div></div>
     <div class="hud" id="hud">ready</div>
+    <div class="drawer" id="drawer">
+      <div class="dtop"><input id="asearch" placeholder="Search: D8-M37, dataset 4, M10, 24h…"><label><input type="checkbox" id="honly" checked> held-out only</label><button class="abtn" id="closeAnimals">Close</button></div>
+      <div class="dlist" id="alist"></div>
+    </div>
   </div>
   <aside>
     <div class="log" id="log"></div>
@@ -149,6 +172,43 @@ function renderMeasurements(ms) {
     `<tr><td>${m.mouse} ${m.timepoint}</td><td>${m.structure} ${m.metric.replace("_", " ")}</td><td>${m.value.toLocaleString()} ${m.unit}</td></tr>`).join("");
 }
 
+async function render(turn, r) {
+    const okFlags = r.results.map((x) => x.ok);
+    const calls = r.calls.map((c, i) => `<span class="call ${okFlags[i] === false || r.problems.length ? "err" : ""}">${esc(fmtCall(c))}</span>`).join("");
+    turn.innerHTML = (r.direct ? `<div class="direct">picked from the animal list · no language model</div>` : "") +
+      (calls ? `<div class="calls">${calls}</div>` : "") +
+      `<div class="reply">${highlight(r.reply)}</div>` +
+      `<div class="meta">${r.calls.length} call${r.calls.length === 1 ? "" : "s"} · ${r.direct ? "direct" : "LLM " + r.llm_s + "s"} · tools ${r.exec_s}s</div>`;
+    for (const op of r.ops) await applyOp(op);
+    renderMeasurements(r.measurements);
+    hud(r.state.split(";").slice(0, 1).join("") + " · " + (r.direct ? "direct" : $("mode").value));
+}
+
+async function openAnimal(id, tp) {
+  $("drawer").classList.remove("open");
+  addUser(`open ${id} at ${tp}`);
+  const turn = addTurn();
+  hud("loading " + id + " …");
+  const r = await (await fetch("/api/exec", { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ calls: [{ name: "load_scan", arguments: { mouse_id: id, timepoint: tp } }, { name: "segment", arguments: { structure: "tumor" } }] }) })).json();
+  await render(turn, r);
+  $("log").scrollTop = 1e9;
+}
+
+let ANIMALS = [];
+function renderAnimals() {
+  const q = $("asearch").value.trim().toLowerCase(), ho = $("honly").checked;
+  const rows = ANIMALS.filter((a) => (!ho || a.held_out) && (!q || (a.id + " dataset " + a.dataset + " " + a.mouse + " " + a.scans.map((s) => s.tp).join(" ")).toLowerCase().includes(q)));
+  $("alist").innerHTML = rows.map((a) => `<div class="arow"><div class="id">${a.id}<small>${a.held_out ? '<span class="ho">held out</span>' : "seen in training"} · ${a.scans.length} scan${a.scans.length > 1 ? "s" : ""}</small></div>` +
+    `<div class="tps">${a.scans.map((s) => `<span class="tp" data-id="${a.id}" data-tp="${s.tp}" title="experts' tumor volume">${s.tp}<span>${s.expert != null ? Math.round(s.expert) + " mm³" : ""}</span></span>`).join("")}</div></div>`).join("")
+    || `<div class="arow"><div class="id">No matches</div></div>`;
+  $("openAnimals").textContent = `Animals · ${ANIMALS.length}`;
+}
+$("openAnimals").onclick = () => { $("drawer").classList.add("open"); $("asearch").focus(); };
+$("closeAnimals").onclick = () => $("drawer").classList.remove("open");
+$("asearch").oninput = renderAnimals; $("honly").onchange = renderAnimals;
+$("alist").addEventListener("click", (e) => { const t = e.target.closest(".tp"); if (t) openAnimal(t.dataset.id, t.dataset.tp); });
+
 async function send(text) {
   if (!text.trim()) return;
   addUser(text);
@@ -158,14 +218,8 @@ async function send(text) {
   try {
     const r = await (await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text, model: $("model").value, mode: $("mode").value }) })).json();
-    const okFlags = r.results.map((x) => x.ok);
-    const calls = r.calls.map((c, i) => `<span class="call ${okFlags[i] === false || r.problems.length ? "err" : ""}">${esc(fmtCall(c))}</span>`).join("");
-    turn.innerHTML = (calls ? `<div class="calls">${calls}</div>` : "") +
-      `<div class="reply">${highlight(r.reply)}</div>` +
-      `<div class="meta">${r.calls.length} call${r.calls.length === 1 ? "" : "s"} · LLM ${r.llm_s}s · tools ${r.exec_s}s</div>`;
-    for (const op of r.ops) await applyOp(op);
-    renderMeasurements(r.measurements);
-    hud(r.state.split(";").slice(0, 1).join("") + " · " + $("mode").value);
+    await render(turn, r);
+    $("send").disabled = false; $("log").scrollTop = 1e9; return;
   } catch (e) {
     turn.innerHTML = `<div class="reply" style="color:var(--bad)">${esc(e)}</div>`;
   }
@@ -174,7 +228,7 @@ async function send(text) {
 }
 
 $("f").addEventListener("submit", (e) => { e.preventDefault(); const t = $("q").value; $("q").value = ""; send(t); });
-const CHIPS = ["open M37 at day 0 and find the tumor", "how much did the tumor grow from day 0 to day 8?",
+const CHIPS = ["open D8-M37 at day 0 and find the tumor", "how much did the tumor grow from day 0 to day 8?",
   "show it in 3D", "make the skeleton pop out", "how wide is the tumor at its widest?", "is this mouse going to survive?",
   "export the measurements as csv"];
 $("chips").innerHTML = CHIPS.map((c) => `<button class="chip">${c}</button>`).join("");
@@ -186,6 +240,8 @@ const models = info.models.filter((m) => !m.includes("embed"));
 $("model").innerHTML = models.map((m) => `<option ${m === info.model ? "selected" : ""}>${m}</option>`).join("");
 $("mode").value = info.mode;
 hud(info.tumor_model ? "tumor model loaded" : "no tumor model configured");
+ANIMALS = (await (await fetch("/api/catalog")).json()).animals;
+renderAnimals();
 </script>
 </body>
 </html>

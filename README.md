@@ -63,13 +63,20 @@ The demo shows its limits honestly. For mouse M37 it reports 484 → 927 mm³ (+
 
 ```bash
 pip install -r requirements.txt
-ollama pull qwen2.5:3b            # or qwen2.5:1.5b / llama3.1:8b
-bash ../fauxgraft/scripts/get_data.sh   # TumSeg scans (2.2 GB) -> set TUMSEG_DIR to the unzipped folder
-export TUMSEG_DIR="/path/to/TumSeg database"
-export SCANSPEAK_TUMOR_MODEL=models/tumor_unet.pt
-python3 -m scanspeak.server --port 8417
-# open http://127.0.0.1:8417
+bash ../fauxgraft/scripts/get_data.sh data     # TumSeg scans, 2.2 GB (or symlink an existing copy to data/)
+./run.sh                                      # checks Ollama, pulls the model if needed, starts the app
+# open http://127.0.0.1:8417  (127.0.0.1, not localhost)
 ```
+
+**Every animal in the dataset is available: 223 mice, 452 scans across 10 studies.** Click **Animals** (top right) to browse and search them. Each one is tagged *held out* (55 mice the tumor model never trained on) or *seen in training* (its tumor numbers will look better than they should). Click any timepoint to open it with the tumor segmented, no language model involved. Or type, e.g. "open D4-M10 at 16h and measure the tumor volume". IDs are `D<study>-M<mouse>`, because the same mouse number is reused across studies. A bare "M37" gets a question back listing the matches instead of a guess.
+
+For every tumor volume and growth comparison, the reply also gives **the experts' consensus number for the same scan**, so you can see how far off the model is right in the conversation. The animal index is `scanspeak/data/catalog.json`, rebuilt with `python3 scripts/build_catalog.py`.
+
+Two safety rails came out of testing on the new animals:
+- **Your literal words win over the model's paraphrase for IDs and timepoints.** In testing, the 3B model turned "dataset 4 mouse 10 at 16h" into `D16-M10`, and "day 8" into `day0`. The backend reads IDs and timepoints straight out of your message, uses them when they name a real scan, and says so in the reply. A near-miss timepoint ("22h" when the scan is 22.5h) snaps to the closest scan, with a note.
+- **A chain stops at the first failed step.** Previously, a failed `load_scan` let the following `measure` run on whatever scan was open before.
+
+The default model is now llama3.1:8b, the most accurate in the benchmark at about 1 to 2 s per request on this laptop. Use `SCANSPEAK_MODEL=qwen2.5:3b ./run.sh` for faster replies. None of this touches the benchmark: the tool schema and prompts are unchanged.
 
 Reproduce the benchmark (needs only Ollama, no scans):
 
